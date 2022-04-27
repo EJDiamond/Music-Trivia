@@ -28,12 +28,10 @@ The Permanent Marker and Overpass fonts are the main fonts used throughout the w
 
 ### Imagery
 - The background image used throught the quiz is a photograph of a speaker wall, which fits the theme of the quiz and makes for an interesting background.
-- The [favicon], matches the theme of the page, using the yellow background with a musical note representing the music trivia. 
+- The [favicon](https://github.com/EJDiamond/Music-Trivia/blob/main/favicon.png), matches the theme of the page, using the yellow background with a musical note representing the music trivia. 
 
 ### Wireframes
-Home Page Wireframe - View
+Wireframe - [View]()
 
-Mobile Wireframe - View
 
-Contact Us Page Wireframe - View
 
