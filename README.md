@@ -5,21 +5,20 @@
 
 **First Time Visitor Goals**
 
-- As a First Time Visitor, I want to easily understand the main purpose of the site and learn more about the organisation.
-- As a First Time Visitor, I want to be able to easily navigate throughout the site to find content.
-- As a First Time Visitor, I want to look for testimonials to understand what their users think of them and see if they are trusted. I also want to locate their social media links to see their followings on social media to determine how trusted and known they are.
+- As a First Time Visitor, I want to be aesthetically pleased and quickly understand the purpose of the site.
+- As a First Time Visitor, I want to be able to easily find the rules of the quiz and understand how to play.
+- As a First Time Visitor, I want to be get on with answering the quiz questions.
 
 **Returning Visitor Goals**
 
-- As a Returning Visitor, I want to find information about coding challenges.
-- As a Returning Visitor, I want to find the best way to get in contact with the organisation with any questions I may have.
-- As a Returning Visitor, I want to find community links.
+- As a Returning Visitor, I want to be able to select new levels of the game when the previous is passed.
+- As a Returning Visitor, I want to have highscores logged to see progression.
 
 **Frequent User Goals**
 
-- As a Frequent User, I want to check to see if there are any newly added challenges or hackathons.
-- As a Frequent User, I want to check to see if there are any new blog posts.
-- As a Frequent User, I want to sign up to the Newsletter so that I am emailed any major updates and/or changes to the website or organisation.
+- As a Frequent User, I want to check my highscores.
+- As a Frequent User, I want to unlock all levels of the game and be able to play any.
+- As a Frequent User, I want to be able to clear highscores so more can be entered.
 
 ## Design
 
@@ -38,9 +37,9 @@ The Permanent Marker and Overpass fonts are the main fonts used throughout the w
 
 ### Wireframe
 
-The [wireframes](https://github.com/EJDiamond/Music-Trivia/blob/main/assets/images/wireframe-music-trivia.png) show the intial page where the user can select to play, read rules or view the leaderboard. Once 'play' is selected the player is then has the option to select a level, intially only the first level is unlocked and once passed the level two will be available, with level three being accessed once the second level is passed.
+The [wireframes](https://github.com/EJDiamond/Music-Trivia/blob/main/assets/images/wireframe-music-trivia.png) show the intial page where the user can select to play, read rules or view the leaderboard. Once 'play' is selected the player then has the option to select a level, intially only the first level is unlocked and once passed, level two will be available, with level three being accessed once the second level is passed.
 
-The quiz is opened once the level is selected, taking the user to the first question. When an answer is hovered over the slection turn white, if the answer selected is correct it will turn green, if incorrect, it will turn red.
+The quiz is opened once the level is selected, taking the user to the first question. When an answer is hovered over the slection turns white, if the answer selected is correct it will turn green, if incorrect, it will turn red.
 
 The option to exit the quiz is presented as a button at each stage.
 
