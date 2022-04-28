@@ -16,23 +16,25 @@ body {
     width: 100vw;
     height: 100vh;
     align-items: center;
-    background: url(../images/background-image.webp) center center no-repeat;
+    background: url(../images/homepage-background.webp) center center no-repeat;
     background-size: cover;
+    overflow: hidden;
 }
 
 #homepage-section {
     background-color: #eecf71;
-    width: 600px;
+    width: 700px;
     border: white 3px solid;
     padding: 20px;
     justify-content: center;
     display: flex;
+    flex-direction: column;
     text-align: center;
     border-radius: 3px;
     max-width: 75%;
 }
 
-.hompage-container {
+.homepage-container {
     margin: 25px 0 25px 0;
 }
 
@@ -46,12 +48,33 @@ hr {
     border-width: 0;
     border-radius: 1px;
     height: 4px;
-    width: 500px
 }
 
 .homepage-container p {
     text-transform: uppercase;
-    padding-top: 20px;
+    padding-top: 25px;
     line-height: 20px;
     font-weight: 200;
+    margin-bottom: 25px;
+    font-size: 1.2rem;
+}
+
+.btn {
+    background-color: black;
+    color: white;
+    font-family: "permanent marker", cursive;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    padding: 5px;
+    width: 90%;
+    max-width: 75%;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.btn:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    border: black solid 3px;
 }
