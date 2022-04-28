@@ -1,10 +1,10 @@
 /* Google font import*/
-@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@100&family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@600&family=Permanent+Marker&display=swap');
 
 * {
     margin: 0;
     padding: 0;
-    /*background-color: #eecf71;*/
+    background-color: #eecf71;
     box-sizing: border-box;
 }
 
@@ -18,4 +18,40 @@ body {
     align-items: center;
     background: url(../images/background-image.webp) center center no-repeat;
     background-size: cover;
+}
+
+#homepage-section {
+    background-color: #eecf71;
+    width: 600px;
+    border: white 3px solid;
+    padding: 20px;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    border-radius: 3px;
+    max-width: 75%;
+}
+
+.hompage-container {
+    margin: 25px 0 25px 0;
+}
+
+#heading {
+    font-family: "permanent marker", cursive;
+    font-size: 3.75rem;
+}
+
+hr {
+    background-color: black;
+    border-width: 0;
+    border-radius: 1px;
+    height: 4px;
+    width: 500px
+}
+
+.homepage-container p {
+    text-transform: uppercase;
+    padding-top: 20px;
+    line-height: 20px;
+    font-weight: 200;
 }
