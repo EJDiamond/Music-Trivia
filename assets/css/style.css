@@ -21,6 +21,8 @@ body {
     overflow: hidden;
 }
 
+/* Homepage section*/
+
 #homepage-section {
     background-color: #eecf71;
     width: 700px;
@@ -38,7 +40,7 @@ body {
     margin: 25px 0 25px 0;
 }
 
-#heading {
+.heading {
     font-family: "permanent marker", cursive;
     font-size: 3.75rem;
 }
@@ -78,3 +80,89 @@ hr {
     cursor: pointer;
     border: black solid 3px;
 }
+
+/* Rule book modal pop up */
+
+.rules-container {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../images/homepage-background.webp) center center no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.rules-container.show {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.modal {
+    background-color: #eecf71;
+    width: 700px;
+    border: white 3px solid;
+    padding: 20px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 3px;
+    max-width: 75%;
+}
+
+.modal h2 {
+    font-family: "permanent marker", cursive;
+    font-size: 2rem;
+    padding-top: 10px;
+}
+
+.modal ul {
+    list-style-position: inside;
+    list-style-type:decimal;
+    padding-top: 20px;
+    line-height: 30px;
+    font-weight: 200;
+    font-size: 1.2rem;
+
+}
+
+.modal p {
+    text-transform: uppercase;
+    padding-top: 25px;
+    line-height: 10px;
+    font-weight: 200;
+    font-size: 1.2rem;
+}
+
+/*Exit rule book modal button */
+
+.button-container {
+    display: flex;
+    justify-content: end;
+}
+
+.exit-btn {
+    background-color: black;
+    color: white;
+    font-family: "permanent marker", cursive;
+    font-size: 1.5rem;
+    border-radius: 40px;
+    padding: 5px;
+    width: 90px;
+    text-transform: uppercase;
+}
+
+.exit-btn:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    border: black solid 3px;
+}
+
