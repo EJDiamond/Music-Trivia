@@ -79,6 +79,8 @@ hr {
     color: black;
     cursor: pointer;
     border: black solid 3px;
+    transform: scale(1.1);
+    transform: transform 100ms;
 }
 
 /* Rule book modal pop up */
@@ -97,6 +99,7 @@ hr {
     left: 0;
     opacity: 0;
     pointer-events: none;
+    transition: opacity 0.4ms ease;
 }
 
 .rules-container.show {

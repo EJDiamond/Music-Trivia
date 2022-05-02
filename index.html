@@ -7,15 +7,17 @@
     <meta name="description" content="A quiz to test your music knowledge.">
     <meta name="keywords" content="music quiz, music trivia, music, quiz, test your knowledge, music game">
     <title>Music Triva</title>
+    <!--Link to font awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <!--Link to css and favicon-->
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    
-    
 </head>
+
 <body>
     <!--Home page-->
-    <section id="homepage-section">
+    <!--<section id="homepage-section">
         <div class="homepage-container">
             <h1 class="heading">Music Trivia</h1>
             <hr class="line">
@@ -29,6 +31,7 @@
             </div>
         </div>
     </section>
+-->
     <!--Rule book modal pop up-->
     <section id="rulebook">
         <div class="rules-container" id="rules_container">
@@ -56,7 +59,22 @@
                 </div>
             </div>
         </div>
-
+    </section>
+    <!--Quiz game section-->
+    <section id="game-section" class="'hide">
+        <div class="quiz-container">
+            <div id="game-area">
+                <div id="score">
+                    <h3>Score: <span id="score">0</span></h3>
+                </div>
+                <div id="question-container">
+                    <p id="question"></p>
+                </div>
+                <div id="answer-container">
+                    <button class="answer-btn" data-number="1"></button>
+                </div>
+            </div>
+        </div>
     </section>
     <script src="assets/js/script.js"></script>
 </body>
