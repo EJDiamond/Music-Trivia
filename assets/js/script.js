@@ -12,6 +12,21 @@ close.addEventListener('click', () => {
     rules_container.classList.remove('show');
 });
 
+// Play button to open level selector modal and button to exit
+
+const openLevel = document.getElementById('play-btn');
+const level_container = document.getElementById('level_container');
+const closeLevel = document.getElementById('exit1');
+
+openLevel.addEventListener('click', () => {
+    level_container.classList.add('show');
+});
+
+closeLevel.addEventListener('click', () => {
+    level_container.classList.remove('show');
+});
+
+
 // Array of questions for level 1 
 
 const levelOneQuestions = [{
