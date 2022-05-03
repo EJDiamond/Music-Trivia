@@ -1,31 +1,15 @@
-// Rule book button to open modal and button to exit
+
 
 const open = document.getElementById('rule-btn');
 const rules_container = document.getElementById('rules_container');
 const close = document.getElementById('exit');
-
-open.addEventListener('click', () => {
-    rules_container.classList.add('show');
-});
-
-close.addEventListener('click', () => {
-    rules_container.classList.remove('show');
-});
-
-// Play button to open level selector modal and button to exit
-
-const openLevel = document.getElementById('play-btn');
+const openLevelOptions = document.getElementById('play-btn');
 const level_container = document.getElementById('level_container');
-const closeLevel = document.getElementById('exit1');
-
-openLevel.addEventListener('click', () => {
-    level_container.classList.add('show');
-});
-
-closeLevel.addEventListener('click', () => {
-    level_container.classList.remove('show');
-});
-
+const closeLevelOptions = document.getElementById('exit1');
+const levelOneOpen = document.getElementById('level-one-btn');
+const levelTwoOpen = document.getElementById('level-two-btn');
+const levelThreeOpen = document.getElementById('level-three-btn');
+const closeLevelOne = document.getElementById("exit1");
 
 // Array of questions for level 1 
 
@@ -192,3 +176,32 @@ const levelOneQuestions = [{
         correct:"1"
     }
 ]
+
+// Rule book button to open modal and button to exit
+
+open.addEventListener('click', () => {
+    rules_container.classList.add('show');
+});
+
+close.addEventListener('click', () => {
+    rules_container.classList.remove('show');
+});
+
+// Play button to open level selector modal and button to exit
+
+
+openLevelOptions.addEventListener('click', () => {
+    level_container.classList.add('show');
+});
+
+closeLevelOptions.addEventListener('click', () => {
+    level_container.classList.remove('show');
+});
+
+// Function to start level one
+
+
+    levelOneOpen.addEventListener ('click',() => {
+        level_container_one.classList.add('show');
+});
+

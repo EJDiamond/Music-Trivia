@@ -198,6 +198,23 @@ hr {
 
 /* Game play area with questions, answers, score keeper and exit button*/
 
+.level-container-one {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../images/homepage-background.webp) center center no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4ms ease;
+    text-align: center;
+}
 
 #question {
     padding-top: 25px;
@@ -205,6 +222,11 @@ hr {
     font-weight: 200;
     font-size: 1.5rem;
     padding-bottom: 2rem;
+}
+
+.level-container-one.show {
+    pointer-events: auto;
+    opacity: 1;
 }
 
 .score-count {
