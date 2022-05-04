@@ -285,3 +285,23 @@ hr {
     color: black;
     border: red solid 1px;
 }
+
+/* End of level and final score container */
+
+.level-completed {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../images/homepage-background.webp) center center no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4ms ease;
+    text-align: center;
+}

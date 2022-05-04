@@ -19,11 +19,10 @@ const score = document.getElementById('score');
 
 let currentQuestion = {};
 let acceptingAnswers = true;
-let questionCounter = 0;
-let PointScore = 0;
+let pointScore = 0;
 let availableQuestions = []
 const SCORE_POINTS = 1
-const MAX_QUESTION = 20
+const MAX_QUESTIONS= 20
 
 // Rule book button to open modal and button to exit
 
@@ -222,9 +221,33 @@ let levelOneQuestions = [{
 ]
 
 
-function StartQuiz () {
+function startQuiz () {
     availableQuestions = [...levelOneQuestions];
     questionCounter = 0;
     score = 0;
     NewQuestion();
 }
+
+function NewQuestion () {
+    if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
+        $("#level-completed").modal();
+    };
+    return $("#level-completed").modal("show");
+   
+const questionsIndex = Math.floor(Math.random() * availableQuestions.length)
+currentQuestion = availableQuestions[questionsIndex]
+question.innerText = currentQuestion.question
+
+answers.forEach(answer => {
+    const number = answer.dataset['number']
+    answer.innerText = currentQuestion['answer + number']
+})
+
+availableQuestions.splice(questionsIndex, 1)
+
+acceptingAnswers = true;
+
+}
+
+
+
