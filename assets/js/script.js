@@ -10,9 +10,9 @@ const levelOneOpen = document.getElementById('level-one-btn');
 const levelTwoOpen = document.getElementById('level-two-btn');
 const levelThreeOpen = document.getElementById('level-three-btn');
 const level_container_one = document.getElementById('level_container_one');
-const closeLevelOne = document.getElementById('exit2');
+const levelOneClose = document.getElementById('exit2');
 const question = document.getElementById('question');
-const answers = Array.from(querySelectorAll('.answer'));
+const answers = Array.from(document.querySelectorAll('.answer'));
 const score = document.getElementById('score');
 
 // Game Variables
@@ -24,6 +24,36 @@ let PointScore = 0;
 let availableQuestions = []
 const SCORE_POINTS = 1
 const MAX_QUESTION = 20
+
+// Rule book button to open modal and button to exit
+
+open.addEventListener('click', () => {
+    rules_container.classList.add('show');
+});
+
+close.addEventListener('click', () => {
+    rules_container.classList.remove('show');
+});
+
+// Play button to open level selector modal and button to exit
+
+openLevelOptions.addEventListener('click', () => {
+    level_container.classList.add('show');
+});
+
+closeLevelOptions.addEventListener('click', () => {
+    level_container.classList.remove('show');
+});
+
+// Level 1 button to open level 1 and button to exit
+
+levelOneOpen.addEventListener('click', () => {
+    level_container_one.classList.add('show');
+});
+
+levelOneClose.addEventListener('click', () => {
+    level_container_one.classList.remove('show');
+});
 
 // Array of questions for level 1 
 
@@ -191,36 +221,6 @@ let levelOneQuestions = [{
     }
 ]
 
-
-// Rule book button to open modal and button to exit
-
-open.addEventListener('click', () => {
-    rules_container.classList.add('show');
-});
-
-close.addEventListener('click', () => {
-    rules_container.classList.remove('show');
-});
-
-// Play button to open level selector modal and button to exit
-
-openLevelOptions.addEventListener('click', () => {
-    level_container.classList.add('show');
-});
-
-closeLevelOptions.addEventListener('click', () => {
-    level_container.classList.remove('show');
-});
-
-// Level 1 button to open level 1 and button to exit
-
-levelOneOpen.addEventListener('click', () => {
-    level_container_one.classList.add('show');
-});
-
-closeLevelOne.addEventListener('click', () => {
-    level_container_one.classList.remove('show');
-});
 
 function StartQuiz () {
     availableQuestions = [...levelOneQuestions];
