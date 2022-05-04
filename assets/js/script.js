@@ -9,7 +9,8 @@ const closeLevelOptions = document.getElementById('exit1');
 const levelOneOpen = document.getElementById('level-one-btn');
 const levelTwoOpen = document.getElementById('level-two-btn');
 const levelThreeOpen = document.getElementById('level-three-btn');
-const closeLevelOne = document.getElementById("exit1");
+const level_container_one = document.getElementById('level_container_one');
+const closeLevelOne = document.getElementById("exit2");
 
 // Array of questions for level 1 
 
@@ -198,10 +199,13 @@ closeLevelOptions.addEventListener('click', () => {
     level_container.classList.remove('show');
 });
 
-// Function to start level one
+// Level 1 button to open level 1 and button to exit
 
+levelOneOpen.addEventListener('click', () => {
+    level_container_one.classList.add('show');
+});
 
-    levelOneOpen.addEventListener ('click',() => {
-        level_container_one.classList.add('show');
+closeLevelOne.addEventListener('click', () => {
+    level_container_one.classList.remove('show');
 });
 
