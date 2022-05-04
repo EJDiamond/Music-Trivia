@@ -11,6 +11,8 @@ const levelTwoOpen = document.getElementById('level-two-btn');
 const levelThreeOpen = document.getElementById('level-three-btn');
 const level_container_one = document.getElementById('level_container_one');
 const closeLevelOne = document.getElementById("exit2");
+const question = document.getElementById("question");
+const answer = document.getElementById("question");
 
 // Array of questions for level 1 
 
@@ -189,7 +191,6 @@ close.addEventListener('click', () => {
 });
 
 // Play button to open level selector modal and button to exit
-
 
 openLevelOptions.addEventListener('click', () => {
     level_container.classList.add('show');

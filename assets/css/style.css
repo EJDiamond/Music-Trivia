@@ -4,7 +4,6 @@
 * {
     margin: 0;
     padding: 0;
-    background-color: #eecf71;
     box-sizing: border-box;
 }
 
@@ -134,7 +133,7 @@ hr {
     font-size: 1.2rem;
 }
 
-.modal p {
+.rules-container .modal p {
     text-transform: uppercase;
     padding-top: 25px;
     line-height: 20px;
@@ -216,6 +215,18 @@ hr {
     text-align: center;
 }
 
+.modal {
+    background-color: #eecf71;
+    width: 700px;
+    border: white 3px solid;
+    padding: 20px;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 3px;
+    max-width: 75%;
+}
+
 #question {
     padding-top: 25px;
     line-height: 10px;
@@ -240,23 +251,37 @@ hr {
 
 /*Multiple choice answer question buttons*/
 
-.answer-btn {
-    background-color: black;
+.answer-container {
+    background: black;
     color: white;
     font-family: "overpass", sans-serif;
     font-size: 1.5rem;
     border-radius: 5px;
     padding: 5px;
-    width: 90%;
-    max-width: 75%;
+    width: 100%;
     margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
     
-.answer-btn:hover {
+.answer-container:hover {
     background-color: white;
     color: black;
     cursor: pointer;
     border: black solid 3px;
-    transform: scale(1.1);
+    transform: scale(1.05);
     transform: transform 100ms;
+}
+
+.correct {
+    background: white;
+    color: black;
+    border: green solid 1px;
+}
+
+.incorrect {
+    background: white;
+    color: black;
+    border: red solid 1px;
 }
