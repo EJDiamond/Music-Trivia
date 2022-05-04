@@ -233,6 +233,7 @@ hr {
     font-weight: 200;
     font-size: 1.5rem;
     padding-bottom: 2rem;
+    line-height: 25px;
 }
 
 .level-container-one.show {
@@ -277,13 +278,13 @@ hr {
 .correct {
     background: white;
     color: black;
-    border: green solid 1px;
+    border: green solid 4px;
 }
 
 .incorrect {
     background: white;
     color: black;
-    border: red solid 1px;
+    border: red solid 4px;
 }
 
 /* End of level and final score container */

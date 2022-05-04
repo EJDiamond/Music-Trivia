@@ -13,12 +13,14 @@ const level_container_one = document.getElementById('level_container_one');
 const levelOneClose = document.getElementById('exit2');
 const question = document.getElementById('question');
 const answers = Array.from(document.querySelectorAll('.answer'));
-const score = document.getElementById('score');
+const scoreText = document.getElementById('score');
+
 
 // Game Variables
 
 let currentQuestion = {};
 let acceptingAnswers = true;
+let questionCounter = 0
 let pointScore = 0;
 let availableQuestions = []
 const SCORE_POINTS = 1
@@ -57,7 +59,7 @@ levelOneClose.addEventListener('click', () => {
 // Array of questions for level 1 
 
 let levelOneQuestions = [{
-        question: "Who had a 1983 hit with the song &#039;Africa&#039;?",
+        question: 'Who had a 1983 hit with the song "Africa"?',
         ans1: "Toto",
         ans2: "Foreigner",
         ans3: "Steely Dan",
@@ -81,15 +83,15 @@ let levelOneQuestions = [{
         correct: 4,
     },
     {
-        question: "Which singer was featured in Jack &Uuml; (Skrillex &amp; Diplo)&#039;s 2015 song &#039;Where Are &Uuml; Now&#039;?",
-        ans1: "Justin Bieber",
-        ans2: "Selena Gomez",
-        ans3: "Ellie Goulding",
-        ans4: "The Weekend",
+        question: "Which of the following songs is not a written by Greenday?",
+        ans1: "In to Deep",
+        ans2: "Basketcase",
+        ans3: "Holiday",
+        ans4: "Welcome to Paradise",
         correct: 1,
     },
     {
-        question: "Whose signature guitar technique is called the &quot;windmill&quot;?",
+        question: "Whose signature guitar technique is called the 'windmill'?",
         ans1: "Jimmy Page",
         ans2: "Eddie Van Halen",
         ans3: "Pete Townshend",
@@ -114,7 +116,7 @@ let levelOneQuestions = [{
         correct: 4,
     },
     {
-        question: "What is the name of Finnish DJ Darude&#039;s hit single released in October 1999?",
+        question: "What is the name of Finnish DJ Darude's hit single released in October 1999?",
         ans1: "Dust Devil",
         ans2: "Sandstorm",
         ans3: "Sirocco",
@@ -122,7 +124,7 @@ let levelOneQuestions = [{
         correct: 2,
     },
     {
-        question: "Which artist released the 2012 single &quot;Harlem Shake&quot;, which was used in numerous YouTube videos in 2013?",
+        question: 'Which artist released the 2012 single "Harlem Shake", which was used in numerous YouTube videos in 2013?',
         ans1: "Baauer",
         ans2: "RL Grime",
         ans3: "NGHTMRE",
@@ -154,7 +156,7 @@ let levelOneQuestions = [{
         correct: 1,
     },
     {
-        question: "From which country did the song &quot;Gangnam Style&quot; originate from?",
+        question: 'From which country did the song "Gangnam Style" originate from?',
         ans1: "Japan",
         ans2: "North Korea",
         ans3: "South Korea",
@@ -178,7 +180,7 @@ let levelOneQuestions = [{
         correct: 3,
     },
     {
-        question: "Who was featured in the song &quot;Words&quot; by Feint? ",
+        question: 'Who was featured in the song "Words" by Feint?',
         ans1: "Anna Yvette ",
         ans2: "Laura Brehm",
         ans3: "Danyka Nadeau",
@@ -194,7 +196,7 @@ let levelOneQuestions = [{
         correct: 4,
     },
     {
-        question: "Who performed &quot;I Took A Pill In Ibiza&quot;?",
+        question: 'Who performed "I Took A Pill In Ibiza"?',
         ans1: "Avicii",
         ans2: "Mike Posner",
         ans3: "Robbie Williams",
@@ -204,14 +206,14 @@ let levelOneQuestions = [{
     {
         question: "The band Muse released their first album, Showbiz, in what year?",
         "correct_answer": "1999",
-        an1: "1998",
+        ans1: "1998",
         ans2: "2000",
         ans3: "1999",
         ans4: "2001",
         correct: 3,
     },
     {
-        question: "What Led Zeppelin album contains &quot;Stairway to Heaven&quot;?",
+        question: 'What Led Zeppelin album contains "Stairway to Heaven"?',
         ans1: "Led Zeppelin IV",
         ans2: "Houses of the Holy",
         ans3: "Physical Graffiti",
@@ -220,27 +222,31 @@ let levelOneQuestions = [{
     }
 ]
 
-
+// Function to start quiz
 function startQuiz () {
     availableQuestions = [...levelOneQuestions];
     questionCounter = 0;
-    score = 0;
+    scores = 0;
     NewQuestion();
 }
 
+// Function to present new question
 function NewQuestion () {
     if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
         $("#level-completed").modal();
-    };
+    
     return $("#level-completed").modal("show");
-   
+};  
+
+// Variable to present random questions
 const questionsIndex = Math.floor(Math.random() * availableQuestions.length)
 currentQuestion = availableQuestions[questionsIndex]
 question.innerText = currentQuestion.question
 
-answers.forEach(answer => {
-    const number = answer.dataset['number']
-    answer.innerText = currentQuestion['answer + number']
+// Assigning answers to relevant question
+answers.forEach(ans => {
+    const number = ans.dataset['number'];
+    ans.innerText = currentQuestion['ans' + number];
 })
 
 availableQuestions.splice(questionsIndex, 1)
@@ -249,5 +255,37 @@ acceptingAnswers = true;
 
 }
 
+// Function to check if the correct answer has been selected
 
+answers.forEach(ans => {
+    ans.addEventListener ('click', e => {
+        if(!acceptingAnswers) return
 
+        acceptingAnswers = false
+        const selectedChoice = e.target
+        const selectedAnswer = selectedChoice.dataset['number']
+
+        //check if answer is correct
+        let classtoApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
+
+        if(classtoApply === 'correct') {
+            incrementScore(SCORE_POINTS)
+        }
+
+        selectedChoice.parentElement.classList.add(classtoApply)
+
+        //reset and present next question
+        setTimeout(() => {
+            selectedChoice.parentElement.classList.remove(classtoApply)
+            NewQuestion()
+            
+        }, 1000)
+    })
+})
+
+incrementScore = num => {
+    score +=num
+    scoreText.innerText = score
+}
+
+startQuiz ()
