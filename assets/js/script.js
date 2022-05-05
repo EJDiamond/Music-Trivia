@@ -67,7 +67,7 @@ let levelOneQuestions = [{
         correct: 1,
     },
     {
-        question: "&quot;Some people call me the space cowboy&quot; is the first line from what song?",
+        question: '"Some people call me the space cowboy" is the first line from what song?',
         ans1: "Fandango",
         ans2: "The Joker",
         ans3: "Take The Money and Run",
@@ -266,7 +266,7 @@ answers.forEach(ans => {
         const selectedAnswer = selectedChoice.dataset['number']
 
         //check if answer is correct
-        let classtoApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
+        let classtoApply = selectedAnswer == currentQuestion.correct ? 'correct' : 'incorrect'
 
         if(classtoApply === 'correct') {
             incrementScore(SCORE_POINTS)
@@ -284,8 +284,8 @@ answers.forEach(ans => {
 })
 
 incrementScore = num => {
-    score +=num
-    scoreText.innerText = score
+    pointScore +=num
+    scoreText.innerText = pointScore
 }
 
 startQuiz ()
