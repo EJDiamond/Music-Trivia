@@ -227,15 +227,14 @@ function startQuiz () {
     availableQuestions = [...levelOneQuestions];
     questionCounter = 0;
     scores = 0;
-    NewQuestion();
+    renderNewQuestion();
 }
 
 // Function to present new question
-function NewQuestion () {
+function renderNewQuestion () {
     if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
-        $("#level-completed").modal();
-    
-    return $("#level-completed").modal("show");
+        let show_score_modal = document.getElementById('level_completed').modal();
+        show_score_modal.style.display="flex"
 };  
 
 // Variable to present random questions
@@ -277,7 +276,7 @@ answers.forEach(ans => {
         //reset and present next question
         setTimeout(() => {
             selectedChoice.parentElement.classList.remove(classtoApply)
-            NewQuestion()
+            renderNewQuestion()
             
         }, 1000)
     })
