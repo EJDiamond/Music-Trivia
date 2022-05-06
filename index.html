@@ -16,8 +16,9 @@
 </head>
 
 <body>
+
     <!--Home page-->
-    <section id="homepage-section">
+    <section class="homepage-section">
         <div class="homepage-container">
             <h1 class="heading">Music Trivia</h1>
             <hr class="line">
@@ -60,24 +61,10 @@
             </div>
         </div>
     </section>
-    <!--Level selector section-->
-    <section id="levels">
-        <div id="level_container" class="level-container">
-            <div class="modal">
-                <button type="button" id="level-one-btn" class="btn">Level 1</button>
-                <button type="button" id="level-two-btn" class="btn">Level 2</button>
-                <button type="button" id="level-three-btn" class="btn">Level 3</button>
-                <div class="button-container">
-                    <button id="exit1" class="exit-btn">
-                        Exit
-                    </button>
-                </div>
-            </div>   
-        </div> 
-    </section>
+
     <!--Quiz game section-->
     <section id="game-section-one">
-        <div class="level-container-one" id = "level_container_one">
+        <div class="quiz-container" id = "quiz_container">
             <div id="game-area" class="modal">
                 <div class="score-count">
                     <h3>Score: <span id="score">0</span></h3>
@@ -98,16 +85,17 @@
                     <p class="answer" data-number="4">Answer 4</p>
                 </div>
                 <div class="button-container">
-                    <button id="exit2" class="exit-btn">
+                    <button id="exit1" class="exit-btn">
                         Exit
                     </button>
                 </div>
             </div>   
         </div>
     </section>
+
     <!--Quiz Completed modal showing final score-->
-    <section id="completed-level">
-        <div class="level-completed" id="level_completed" hidden>
+    <section id="completed-quiz">
+        <div class="quiz-completed" id="quiz_completed" hidden>
             <div class="modal">
                 <h1 class="heading"> End of Quiz</h1>
                 <hr class="line">

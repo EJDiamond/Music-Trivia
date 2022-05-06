@@ -3,18 +3,11 @@
 const open = document.getElementById('rule-btn');
 const rules_container = document.getElementById('rules_container');
 const close = document.getElementById('exit');
-const openLevelOptions = document.getElementById('play-btn');
-const level_container = document.getElementById('level_container');
-const closeLevelOptions = document.getElementById('exit1');
-const levelOneOpen = document.getElementById('level-one-btn');
-const levelTwoOpen = document.getElementById('level-two-btn');
-const levelThreeOpen = document.getElementById('level-three-btn');
-const level_container_one = document.getElementById('level_container_one');
-const levelOneClose = document.getElementById('exit2');
+const openQuiz = document.getElementById('play-btn');
+const closeQuiz = document.getElementById('exit1');
 const question = document.getElementById('question');
 const answers = Array.from(document.querySelectorAll('.answer'));
 const scoreText = document.getElementById('score');
-
 
 // Game Variables
 
@@ -38,27 +31,18 @@ close.addEventListener('click', () => {
 
 // Play button to open level selector modal and button to exit
 
-openLevelOptions.addEventListener('click', () => {
-    level_container.classList.add('show');
+openQuiz.addEventListener('click', () => {
+    quiz_container.classList.add('show');
 });
 
-closeLevelOptions.addEventListener('click', () => {
-    level_container.classList.remove('show');
+closeQuiz.addEventListener('click', () => {
+    quiz_container.classList.remove('show');
 });
 
-// Level 1 button to open level 1 and button to exit
 
-levelOneOpen.addEventListener('click', () => {
-    level_container_one.classList.add('show');
-});
+// Array of questions
 
-levelOneClose.addEventListener('click', () => {
-    level_container_one.classList.remove('show');
-});
-
-// Array of questions for level 1 
-
-let levelOneQuestions = [{
+let Questions = [{
         question: 'Who had a 1983 hit with the song "Africa"?',
         ans1: "Toto",
         ans2: "Foreigner",
@@ -224,7 +208,7 @@ let levelOneQuestions = [{
 
 // Function to start quiz
 function startQuiz () {
-    availableQuestions = [...levelOneQuestions];
+    availableQuestions = [...Questions];
     questionCounter = 0;
     scores = 0;
     renderNewQuestion();
@@ -233,8 +217,8 @@ function startQuiz () {
 // Function to present new question
 function renderNewQuestion () {
     if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
-        let show_score_modal = document.getElementById('level_completed').modal();
-        show_score_modal.style.display="flex"
+        let show_score_modal = document.getElementById('quiz_completed');
+        show_score_modal.style.display="flex";
 };  
 
 // Variable to present random questions
@@ -280,6 +264,7 @@ answers.forEach(ans => {
             
         }, 1000)
     })
+    quizEnded()
 })
 
 incrementScore = num => {
@@ -288,3 +273,7 @@ incrementScore = num => {
 }
 
 startQuiz ()
+
+function quizEnded () {
+    
+}
