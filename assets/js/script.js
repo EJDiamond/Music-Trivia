@@ -10,7 +10,8 @@ const answers = Array.from(document.querySelectorAll('.answer'));
 const scoreText = document.getElementById('score');
 const openLeaderBoard = document.getElementById('leader-btn');
 const closeLeaderBoard = document.getElementById('exit3');
-const hideHomepage = document.getElementById('homepage_section')
+const hideHomepage = document.getElementById('homepage_section');
+const showHomepage = document.getElementById('homepage_section');
 // Game Variables
 
 let currentQuestion = {};
@@ -35,10 +36,12 @@ close.addEventListener('click', () => {
 
 openQuiz.addEventListener('click', () => {
     quiz_container.classList.add('show');
+    hideHomepage.style.display="none";
 });
 
 closeQuiz.addEventListener('click', () => {
     quiz_container.classList.remove('show');
+    showHomepage.style.display="flex";
 });
 
 //Leader board button to open leaderboard

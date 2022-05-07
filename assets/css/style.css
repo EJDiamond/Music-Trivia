@@ -91,9 +91,6 @@ hr {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url(../images/homepage-background.webp) center center no-repeat;
-    background-size: cover;
-    overflow: hidden;
     top: 0;
     left: 0;
     opacity: 0;
@@ -176,9 +173,6 @@ hr {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url(../images/homepage-background.webp) center center no-repeat;
-    background-size: cover;
-    overflow: hidden;
     top: 0;
     left: 0;
     opacity: 0;
