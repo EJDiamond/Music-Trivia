@@ -270,11 +270,11 @@ answers.forEach(ans => {
             incrementScore(SCORE_POINTS)
         }
 
-        selectedChoice.parentElement.classList.add(classtoApply)
+        selectedChoice.classList.add(classtoApply)
 
         //reset and present next question
         setTimeout(() => {
-            selectedChoice.parentElement.classList.remove(classtoApply)
+            selectedChoice.classList.remove(classtoApply)
             renderNewQuestion()
             
         }, 1000)
