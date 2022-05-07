@@ -12,6 +12,7 @@ const openLeaderBoard = document.getElementById('leader-btn');
 const closeLeaderBoard = document.getElementById('exit3');
 const hideHomepage = document.getElementById('homepage_section');
 const showHomepage = document.getElementById('homepage_section');
+const finalScore = document.getElementById('final_score');
 // Game Variables
 
 let currentQuestion = {};
@@ -242,6 +243,7 @@ function renderNewQuestion () {
         hideHomepage.style.display="none";
 };  
 
+
 // Variable to present random questions
 const questionsIndex = Math.floor(Math.random() * availableQuestions.length)
 currentQuestion = availableQuestions[questionsIndex]
@@ -289,9 +291,11 @@ answers.forEach(ans => {
 
 incrementScore = num => {
     pointScore +=num
-    scoreText.innerText = pointScore
+    scoreText.innerText = pointScore;
+
+    finalScore.innerText = pointScore;
 }
 
-startQuiz ()
+startQuiz ();
 
     
