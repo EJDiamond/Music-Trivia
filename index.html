@@ -95,13 +95,40 @@
 
     <!--Quiz Completed modal showing final score-->
     <section id="completed-quiz">
-        <div class="quiz-completed" id="quiz_completed" hidden>
+        <div class="quiz-completed" id="quiz_completed">
             <div class="modal">
                 <h1 class="heading"> End of Quiz</h1>
                 <hr class="line">
+                <br>
                 <p> Total Score: <span id="final-score">0</span></p>
+                <br>
+                <form action="POST">
+                    <label for="name">Save your score!</label>
+                    <input id="name" type="text" placeholder="Insert name">
+                    <button id="btn" class="exit-btn" type="submit">Save</button>
+                </form>
             </div>
         </div>
+    </section>
+    <section>
+    <!-- Leader Board section-->
+        <div class="leader-board" id="leader_board">
+            <div class="modal">
+                <table class="table">
+                    <thead>
+                        <th scope="col">Name</th>
+                        <th scope="col">Score</th>
+                    </thead>
+                    <tbody class="score-list"></tbody>
+                </table>
+                <div class="button-container">
+                    <button id="exit3" class="exit-btn">
+                        Exit
+                    </button>
+                </div>
+            </div>
+        </div>
+
     </section>
     <script src="assets/js/script.js"></script>
 </body>

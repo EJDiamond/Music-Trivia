@@ -8,6 +8,8 @@ const closeQuiz = document.getElementById('exit1');
 const question = document.getElementById('question');
 const answers = Array.from(document.querySelectorAll('.answer'));
 const scoreText = document.getElementById('score');
+const openLeaderBoard = document.getElementById('leader-btn');
+const closeLeaderBoard = document.getElementById('exit3');
 
 // Game Variables
 
@@ -38,6 +40,17 @@ openQuiz.addEventListener('click', () => {
 closeQuiz.addEventListener('click', () => {
     quiz_container.classList.remove('show');
 });
+
+//Leader board button to open leaderboard
+
+openLeaderBoard.addEventListener('click', () => {
+    leader_board.classList.add('show');
+})
+
+closeLeaderBoard.addEventListener('click', () => {
+    leader_board.classList.remove('show');
+})
+
 
 
 // Array of questions
@@ -217,6 +230,8 @@ function startQuiz () {
 // Function to present new question
 function renderNewQuestion () {
     if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
+        let hide_quiz_container = document.getElementById('quiz_container');
+        hide_quiz_container.style.display="none";
         let show_score_modal = document.getElementById('quiz_completed');
         show_score_modal.style.display="flex";
 };  
@@ -264,7 +279,6 @@ answers.forEach(ans => {
             
         }, 1000)
     })
-    quizEnded()
 })
 
 incrementScore = num => {
@@ -274,6 +288,4 @@ incrementScore = num => {
 
 startQuiz ()
 
-function quizEnded () {
     
-}
