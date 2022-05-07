@@ -26,10 +26,12 @@ const MAX_QUESTIONS= 20
 
 open.addEventListener('click', () => {
     rules_container.classList.add('show');
+    hideHomepage.style.display="none";
 });
 
 close.addEventListener('click', () => {
     rules_container.classList.remove('show');
+    showHomepage.style.display="flex";
 });
 
 // Play button to open level selector modal and button to exit
@@ -48,13 +50,13 @@ closeQuiz.addEventListener('click', () => {
 
 openLeaderBoard.addEventListener('click', () => {
     leader_board.classList.add('show');
+    hideHomepage.style.display="none";
 })
 
 closeLeaderBoard.addEventListener('click', () => {
     leader_board.classList.remove('show');
+    showHomepage.style.display="flex";
 })
-
-
 
 // Array of questions
 

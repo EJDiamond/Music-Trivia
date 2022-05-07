@@ -79,7 +79,7 @@ hr {
     cursor: pointer;
     border: black solid 3px;
     transform: scale(1.1);
-    transform: transform 100ms;
+    transform: 100ms;
 }
 
 /* Rule book modal pop up */
@@ -211,7 +211,7 @@ hr {
     display: flex;
     justify-content: end;
     text-transform: uppercase;
-    font-weight: 200px;
+    font-weight: 200;
     font-size: 1.8rem;
     font-family: "permanent marker";
 }
@@ -273,9 +273,6 @@ hr {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url(../images/homepage-background.webp) center center no-repeat;
-    background-size: cover;
-    overflow: hidden;
     top: 0;
     left: 0;
     opacity: 0;
