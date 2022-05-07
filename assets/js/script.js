@@ -10,7 +10,7 @@ const answers = Array.from(document.querySelectorAll('.answer'));
 const scoreText = document.getElementById('score');
 const openLeaderBoard = document.getElementById('leader-btn');
 const closeLeaderBoard = document.getElementById('exit3');
-
+const hideHomepage = document.getElementById('homepage_section')
 // Game Variables
 
 let currentQuestion = {};
@@ -234,6 +234,7 @@ function renderNewQuestion () {
         hide_quiz_container.style.display="none";
         let show_score_modal = document.getElementById('quiz_completed');
         show_score_modal.style.display="flex";
+        hideHomepage.style.display="none"
 };  
 
 // Variable to present random questions
