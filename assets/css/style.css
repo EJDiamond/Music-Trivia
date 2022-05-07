@@ -247,17 +247,8 @@ hr {
 /* End of level and final score container */
 
 .quiz-completed {
-    height: 100vh;
-    width: 100vw;
-    position: fixed;
-    display: none;
     justify-content: center;
-    align-items: center;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    transition: opacity 0.4ms ease;
-    text-align: center;
+    display: none;
 }
 
 .quiz-completed.show {

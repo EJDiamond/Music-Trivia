@@ -239,7 +239,7 @@ function renderNewQuestion () {
         hide_quiz_container.style.display="none";
         let show_score_modal = document.getElementById('quiz_completed');
         show_score_modal.style.display="flex";
-        hideHomepage.style.display="none"
+        hideHomepage.style.display="none";
 };  
 
 // Variable to present random questions
