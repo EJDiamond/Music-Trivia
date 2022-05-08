@@ -17,7 +17,7 @@ const username = document.getElementById('username');
 const saveScore = document.getElementById('saveScore');
 const playAgain = document.getElementById('playAgain');
 const quizContainer = document.getElementById('quiz_container');
-const mostRecentScore = localStorage.getItem('mostRecentScore');
+
 
 
 // Game Variables
@@ -28,7 +28,7 @@ let questionCounter = 0;
 let pointScore = 0;
 let availableQuestions = [];
 const SCORE_POINTS = 1;
-const MAX_QUESTIONS= 0;
+const MAX_QUESTIONS= 20;
 
 // Rule book button to open modal and button to exit using event listener
 
@@ -259,7 +259,6 @@ function startQuiz () {
 // Function to present new question and score
 function renderNewQuestion () {
     if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
-        localStorage.setItem("mostRecentScore", pointScore);
         let hide_quiz_container = document.getElementById('quiz_container');
         hide_quiz_container.style.display="none";
         let show_score_modal = document.getElementById('quiz_completed');
@@ -318,21 +317,31 @@ function incrementScore(num) {
     finalScore.innerText = pointScore;
 }
 
-// Function to save user score in local storage
+// Quiz completed final score section
+
+const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
+const MAX_HIGH_SCORES = 6;
+
+// Function to save user score
 function saveHighScore(e) {
     console.log("pressed save");
     e.preventDefault();
     
-    const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
     const score = {
-        score: mostRecentScore,
+        score: finalScore.innerText,
         name: username.value
     };
 
     highScores.push(score);
+    
+// Function to sort highscore from high to low
+    highScores.sort( (a,b) => b.score - a.score)
+    highScores.splice(6);
+
     console.log(highScores);
 };
-    
+
+
 startQuiz ();
 
     
