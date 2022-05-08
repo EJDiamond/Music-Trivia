@@ -19,8 +19,8 @@ const playAgain = document.getElementById('playAgain');
 const quizContainer = document.getElementById('quiz_container');
 const highScoresList = document.getElementById('highScoresList');
 const progressCounter = document.getElementById('progressCounter');
-
-
+const closeEndOfQuiz = document.getElementById('exit2');
+let show_score_modal = document.getElementById('quiz_completed');
 
 // Game Variables
 
@@ -83,9 +83,24 @@ playAgain.addEventListener('click', () => {
     startQuiz();
 });
 
+//Event Listener to close end of quiz score container
+
+closeEndOfQuiz.addEventListener('click', () => {
+    show_score_modal.style.display="none";
+    showHomepage.style.display="flex";
+})
+
 // Array of questions
 
 let questions = [
+    {
+        question: 'What British rock band pioneered the use of the light show?',
+        ans1: "Pink Floyd",
+        ans2: "The Who",
+        ans3: "Led Zepplin",
+        ans4: "The Beatles",
+        correct: 1,
+    },
     {
         question: 'Who had a 1983 hit with the song "Africa"?',
         ans1: "Toto",
@@ -265,7 +280,6 @@ function renderNewQuestion () {
     if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
         let hide_quiz_container = document.getElementById('quiz_container');
         hide_quiz_container.style.display="none";
-        let show_score_modal = document.getElementById('quiz_completed');
         show_score_modal.style.display="flex";
         hideHomepage.style.display="none";
 };

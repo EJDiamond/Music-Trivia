@@ -251,7 +251,7 @@ hr {
 
 .quiz-completed {
     justify-content: center;
-    display: flex;
+    display: none;
 }
 
 .quiz-completed p {
@@ -289,12 +289,18 @@ input {
     margin-right: 10px;
 }
 
+.play-again-btn:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    border: black solid 3px;
+}
+
 .end-button-container {
     margin-top: 30px;
     display: flex;
     justify-content: end;
 }
-
 
 .insert-username {
     justify-content: space-between;
@@ -313,6 +319,7 @@ input {
     border-color: black solid 5px;
     border-radius: 40px;
     margin: 20px 5px;
+    vertical-align: middle;
 }
 
 /*Leader board container */
