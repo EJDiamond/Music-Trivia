@@ -16,6 +16,8 @@ const finalScore = document.getElementById('final_score');
 const username = document.getElementById('username');
 const saveScore = document.getElementById('saveScore');
 
+
+
 // Game Variables
 
 let currentQuestion = {};
@@ -65,12 +67,13 @@ closeLeaderBoard.addEventListener('click', () => {
 // Event Listener for entering the username, in order for the save username button to be enabled
 
  username.addEventListener("keyup", () => {
-     saveScore.disabled = !username.value;
+     console.log(username.value);
+     saveScore.disabled = !username.value; 
  });
 
 // Array of questions
 
-let Questions = [{
+let questions = [{
         question: 'Who had a 1983 hit with the song "Africa"?',
         ans1: "Toto",
         ans2: "Foreigner",
@@ -236,15 +239,16 @@ let Questions = [{
 
 // Function to start quiz
 function startQuiz () {
-    availableQuestions = [...Questions];
+    availableQuestions = [...questions];
     questionCounter = 0;
-    scores = 0;
+    pointScore = 0;
     renderNewQuestion();
 }
 
-// Function to present new question
+// Function to present new question and score
 function renderNewQuestion () {
     if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
+        localStorage.setItem("mostRecentScore", pointScore);
         let hide_quiz_container = document.getElementById('quiz_container');
         hide_quiz_container.style.display="none";
         let show_score_modal = document.getElementById('quiz_completed');
@@ -306,9 +310,19 @@ function incrementScore(num) {
 }
 
 // Function to save user score in local storage
-function saveHighScore(e){
+function saveHighScore(e) {
     console.log("pressed save");
-     
+    e.preventDefault();
+    
+//Pulling the highscores from local storage as an object
+    const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+    console.log(highScores);
+
+    const score = {
+        score: pointScore,
+        name: username.value
+    };
+    console.log(score);
 }
     
 startQuiz ();
