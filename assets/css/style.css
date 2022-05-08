@@ -155,7 +155,8 @@ hr {
     width: 90px;
     height: 40px;
     text-transform: uppercase;
-    text-align: center;
+    vertical-align: middle;
+
 }
 
 .exit-btn:hover {
@@ -253,6 +254,13 @@ hr {
     display: flex;
 }
 
+.quiz-completed p {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 200;
+    margin-top: 10px;
+}
+
 .quiz-completed.show {
     pointer-events: auto;
     opacity: 1;
@@ -285,6 +293,26 @@ input {
     margin-top: 30px;
     display: flex;
     justify-content: end;
+}
+
+
+.insert-username {
+    justify-content: space-between;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 200;
+    font-size: 1.2rem;
+}
+
+.username-form {
+    width: 180px;
+    height: 40px;
+    text-transform: uppercase;
+    background-color: white;
+    color: black;
+    border-color: black solid 5px;
+    border-radius: 40px;
+    margin: 20px 5px;
 }
 
 /*Leader board container */
