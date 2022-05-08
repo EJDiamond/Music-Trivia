@@ -13,6 +13,8 @@ const closeLeaderBoard = document.getElementById('exit3');
 const hideHomepage = document.getElementById('homepage_section');
 const showHomepage = document.getElementById('homepage_section');
 const finalScore = document.getElementById('final_score');
+const username = document.getElementById('username');
+const saveScore = document.getElementById('saveScore');
 
 // Game Variables
 
@@ -24,7 +26,7 @@ let availableQuestions = []
 const SCORE_POINTS = 1
 const MAX_QUESTIONS= 20
 
-// Rule book button to open modal and button to exit
+// Rule book button to open modal and button to exit using event listener
 
 open.addEventListener('click', () => {
     rules_container.classList.add('show');
@@ -36,7 +38,7 @@ close.addEventListener('click', () => {
     showHomepage.style.display="flex";
 });
 
-// Play button to open level selector modal and button to exit
+// Play button to open level selector modal and button to exit using event listener
 
 openQuiz.addEventListener('click', () => {
     quiz_container.classList.add('show');
@@ -48,17 +50,23 @@ closeQuiz.addEventListener('click', () => {
     showHomepage.style.display="flex";
 });
 
-//Leader board button to open leaderboard
+//Leader board button to open leaderboard using event listener
 
 openLeaderBoard.addEventListener('click', () => {
     leader_board.classList.add('show');
     hideHomepage.style.display="none";
-})
+});
 
 closeLeaderBoard.addEventListener('click', () => {
     leader_board.classList.remove('show');
     showHomepage.style.display="flex";
-})
+});
+
+// Event Listener for entering the username, in order for the save username button to be enabled
+
+ username.addEventListener("keyup", () => {
+     saveScore.disabled = !username.value;
+ });
 
 // Array of questions
 
@@ -290,13 +298,19 @@ answers.forEach(ans => {
     })
 })
 
-incrementScore = num => {
+function incrementScore(num) {
     pointScore +=num
     scoreText.innerText = pointScore;
 
     finalScore.innerText = pointScore;
 }
 
+// Function to save user score in local storage
+function saveHighScore(e){
+    console.log("pressed save");
+     
+}
+    
 startQuiz ();
 
     
