@@ -248,7 +248,7 @@ hr {
 
 .quiz-completed {
     justify-content: center;
-    display: flex;
+    display: none;
 }
 
 .quiz-completed.show {

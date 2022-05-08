@@ -15,7 +15,8 @@ const showHomepage = document.getElementById('homepage_section');
 const finalScore = document.getElementById('final_score');
 const username = document.getElementById('username');
 const saveScore = document.getElementById('saveScore');
-
+const playAgain = document.getElementById('playAgain');
+const quizContainer = document.getElementById('quiz_container')
 
 
 // Game Variables
@@ -25,8 +26,8 @@ let acceptingAnswers = true;
 let questionCounter = 0
 let pointScore = 0;
 let availableQuestions = []
-const SCORE_POINTS = 1
-const MAX_QUESTIONS= 20
+const SCORE_POINTS = 1;
+const MAX_QUESTIONS= 2;
 
 // Rule book button to open modal and button to exit using event listener
 
@@ -66,10 +67,18 @@ closeLeaderBoard.addEventListener('click', () => {
 
 // Event Listener for entering the username, in order for the save username button to be enabled
 
- username.addEventListener("keyup", () => {
+username.addEventListener("keyup", () => {
      console.log(username.value);
      saveScore.disabled = !username.value; 
  });
+
+// Event Listener for play again button
+
+playAgain.addEventListener('click', () => {
+    quizContainer.style.display="flex";
+    scoreText.innerText = 0;
+    startQuiz();
+});
 
 // Array of questions
 
@@ -322,7 +331,8 @@ function saveHighScore(e) {
         score: pointScore,
         name: username.value
     };
-    console.log(score);
+    highScores.push(score);
+    console.log(highScores);
 }
     
 startQuiz ();
