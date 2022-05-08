@@ -16,18 +16,19 @@ const finalScore = document.getElementById('final_score');
 const username = document.getElementById('username');
 const saveScore = document.getElementById('saveScore');
 const playAgain = document.getElementById('playAgain');
-const quizContainer = document.getElementById('quiz_container')
+const quizContainer = document.getElementById('quiz_container');
+const mostRecentScore = localStorage.getItem('mostRecentScore');
 
 
 // Game Variables
 
 let currentQuestion = {};
 let acceptingAnswers = true;
-let questionCounter = 0
+let questionCounter = 0;
 let pointScore = 0;
-let availableQuestions = []
+let availableQuestions = [];
 const SCORE_POINTS = 1;
-const MAX_QUESTIONS= 2;
+const MAX_QUESTIONS= 0;
 
 // Rule book button to open modal and button to exit using event listener
 
@@ -82,7 +83,8 @@ playAgain.addEventListener('click', () => {
 
 // Array of questions
 
-let questions = [{
+let questions = [
+    {
         question: 'Who had a 1983 hit with the song "Africa"?',
         ans1: "Toto",
         ans2: "Foreigner",
@@ -263,21 +265,20 @@ function renderNewQuestion () {
         let show_score_modal = document.getElementById('quiz_completed');
         show_score_modal.style.display="flex";
         hideHomepage.style.display="none";
-};  
-
+};
 
 // Variable to present random questions
-const questionsIndex = Math.floor(Math.random() * availableQuestions.length)
-currentQuestion = availableQuestions[questionsIndex]
-question.innerText = currentQuestion.question
+const questionsIndex = Math.floor(Math.random() * availableQuestions.length);
+currentQuestion = availableQuestions[questionsIndex];
+question.innerText = currentQuestion.question;
 
 // Assigning answers to relevant question
 answers.forEach(ans => {
     const number = ans.dataset['number'];
     ans.innerText = currentQuestion['ans' + number];
-})
+});
 
-availableQuestions.splice(questionsIndex, 1)
+availableQuestions.splice(questionsIndex, 1);
 
 acceptingAnswers = true;
 
@@ -287,32 +288,31 @@ acceptingAnswers = true;
 
 answers.forEach(ans => {
     ans.addEventListener ('click', e => {
-        if(!acceptingAnswers) return
+        if(!acceptingAnswers) return;
 
-        acceptingAnswers = false
-        const selectedChoice = e.target
-        const selectedAnswer = selectedChoice.dataset['number']
+        acceptingAnswers = false;
+        const selectedChoice = e.target;
+        const selectedAnswer = selectedChoice.dataset['number'];
 
         //check if answer is correct
-        let classtoApply = selectedAnswer == currentQuestion.correct ? 'correct' : 'incorrect'
+        let classtoApply = selectedAnswer == currentQuestion.correct ? 'correct' : 'incorrect';
 
         if(classtoApply === 'correct') {
-            incrementScore(SCORE_POINTS)
+            incrementScore(SCORE_POINTS);
         }
 
-        selectedChoice.classList.add(classtoApply)
+        selectedChoice.classList.add(classtoApply);
 
         //reset and present next question
         setTimeout(() => {
-            selectedChoice.classList.remove(classtoApply)
-            renderNewQuestion()
-            
-        }, 1000)
-    })
-})
+            selectedChoice.classList.remove(classtoApply);
+            renderNewQuestion();        
+        }, 1000);
+    });
+});
 
 function incrementScore(num) {
-    pointScore +=num
+    pointScore +=num;
     scoreText.innerText = pointScore;
 
     finalScore.innerText = pointScore;
@@ -323,17 +323,15 @@ function saveHighScore(e) {
     console.log("pressed save");
     e.preventDefault();
     
-//Pulling the highscores from local storage as an object
-    const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
-    console.log(highScores);
-
+    const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
     const score = {
-        score: pointScore,
+        score: mostRecentScore,
         name: username.value
     };
+
     highScores.push(score);
     console.log(highScores);
-}
+};
     
 startQuiz ();
 
