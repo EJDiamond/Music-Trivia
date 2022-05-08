@@ -350,10 +350,10 @@ function saveHighScore(e) {
     console.log(highScores);
 };
 
-// Use map to convert the arrays items to strings into new array
+// Use map to convert the arrays items to strings and into new array
 
 highScoresList.innerHTML = highScores.map(score => {
-    return `<li class="high-score">${score.name}-${score.name}</li>`;
+    return `<li class="high-score">${score.name}  -  ${score.score}</li>`;
     })
     .join("")
 
