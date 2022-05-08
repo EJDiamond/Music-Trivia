@@ -18,6 +18,7 @@ const saveScore = document.getElementById('saveScore');
 const playAgain = document.getElementById('playAgain');
 const quizContainer = document.getElementById('quiz_container');
 const highScoresList = document.getElementById('highScoresList');
+const progressCounter = document.getElementById('progressCounter');
 
 
 
@@ -250,6 +251,7 @@ let questions = [
 ]
 
 // Function to start quiz
+
 function startQuiz () {
     availableQuestions = [...questions];
     questionCounter = 0;
@@ -258,6 +260,7 @@ function startQuiz () {
 }
 
 // Function to present new question and score
+
 function renderNewQuestion () {
     if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
         let hide_quiz_container = document.getElementById('quiz_container');
@@ -267,12 +270,19 @@ function renderNewQuestion () {
         hideHomepage.style.display="none";
 };
 
+// Progress counter updated by question counter
+
+questionCounter++;
+progressCounter.innerText = questionCounter + "/" + MAX_QUESTIONS;
+
 // Variable to present random questions
+
 const questionsIndex = Math.floor(Math.random() * availableQuestions.length);
 currentQuestion = availableQuestions[questionsIndex];
 question.innerText = currentQuestion.question;
 
 // Assigning answers to relevant question
+
 answers.forEach(ans => {
     const number = ans.dataset['number'];
     ans.innerText = currentQuestion['ans' + number];

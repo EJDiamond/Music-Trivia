@@ -193,6 +193,16 @@ hr {
     max-width: 75%;
 }
 
+.quizHeader{
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-weight: 120;
+    font-size: 1.8rem;
+    font-family: "permanent marker";
+    text-align: center;
+}
+
 #question {
     padding-top: 25px;
     line-height: 10px;
@@ -205,15 +215,6 @@ hr {
 .quiz-container.show {
     pointer-events: auto;
     opacity: 1;
-}
-
-.score-count {
-    display: flex;
-    justify-content: end;
-    text-transform: uppercase;
-    font-weight: 200;
-    font-size: 1.8rem;
-    font-family: "permanent marker";
 }
 
 /*Multiple choice answer question buttons*/
@@ -289,7 +290,7 @@ input {
 }
 
 .leader-board ul {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     text-transform: uppercase;
     line-height: 30px;
 }
