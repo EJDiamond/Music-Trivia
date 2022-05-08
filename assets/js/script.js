@@ -17,6 +17,7 @@ const username = document.getElementById('username');
 const saveScore = document.getElementById('saveScore');
 const playAgain = document.getElementById('playAgain');
 const quizContainer = document.getElementById('quiz_container');
+const highScoresList = document.getElementById('highScoresList');
 
 
 
@@ -323,6 +324,7 @@ const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
 const MAX_HIGH_SCORES = 6;
 
 // Function to save user score
+
 function saveHighScore(e) {
     console.log("pressed save");
     e.preventDefault();
@@ -335,11 +337,26 @@ function saveHighScore(e) {
     highScores.push(score);
     
 // Function to sort highscore from high to low
+
     highScores.sort( (a,b) => b.score - a.score)
     highScores.splice(6);
 
+    localStorage.setItem("highScores", JSON.stringify(highScores));
+
+// Return to homepage section when user has saved score  
+
+    window.location.assign('index.html');
+
     console.log(highScores);
 };
+
+// Use map to convert the arrays items to strings into new array
+
+highScoresList.innerHTML = highScores.map(score => {
+    return `<li class="high-score">${score.name}-${score.name}</li>`;
+    })
+    .join("")
+
 
 
 startQuiz ();
