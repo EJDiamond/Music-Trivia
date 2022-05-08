@@ -102,9 +102,19 @@
                 <br>
                 <p> Total Score: <span id="final_score">0</span>/20</p>
                 <br>
-                <label for="name">Save your score!</label>
-                <input name="username" id="name" type="text" placeholder="Insert name">
-                <button id="btn" class="exit-btn" type="submit">Save</button>
+                <form>
+                    <label for="name">Save your score!</label>
+                    <input name="username" id="username" type="text" placeholder="Username">
+                    <button id="saveScore" class="exit-btn" type="submit" onclick="saveHighScore(event)">Save</button>
+                </form>
+                <div class="button-container ">
+                    <button id="playAgain" class="exit-btn">
+                        Play Again
+                    </button>
+                    <button id="exit1" class="exit-btn">
+                        Exit
+                    </button>
+                </div>
             </div>
         </div>
     </section>

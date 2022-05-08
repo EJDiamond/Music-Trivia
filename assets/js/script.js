@@ -13,6 +13,7 @@ const closeLeaderBoard = document.getElementById('exit3');
 const hideHomepage = document.getElementById('homepage_section');
 const showHomepage = document.getElementById('homepage_section');
 const finalScore = document.getElementById('final_score');
+
 // Game Variables
 
 let currentQuestion = {};
