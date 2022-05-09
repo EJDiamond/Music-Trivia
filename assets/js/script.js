@@ -79,6 +79,7 @@ username.addEventListener("keyup", () => {
 
 playAgain.addEventListener('click', () => {
     quizContainer.style.display="flex";
+    show_score_modal.style.display="none";
     scoreText.innerText = 0;
     startQuiz();
 });
