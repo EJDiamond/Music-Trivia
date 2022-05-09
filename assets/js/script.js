@@ -287,28 +287,28 @@ function renderNewQuestion () {
 
 // Progress counter updated by question counter
 
-questionCounter++;
-progressCounter.innerText = questionCounter + "/" + MAX_QUESTIONS;
+    questionCounter++;
+    progressCounter.innerText = questionCounter + "/" + MAX_QUESTIONS;
 
 // Variable to present random questions
 
-const questionsIndex = Math.floor(Math.random() * availableQuestions.length);
-currentQuestion = availableQuestions[questionsIndex];
-console.log(currentQuestion)
-if (currentQuestion != {}) {
-    question.innerText = currentQuestion.question;
-    };
+    const questionsIndex = Math.floor(Math.random() * availableQuestions.length);
+    currentQuestion = availableQuestions[questionsIndex];
+    console.log(currentQuestion)
+    if (currentQuestion != {}) {
+        question.innerText = currentQuestion.question;
+        };
 
 // Assigning answers to relevant question
 
-answers.forEach(ans => {
-    const number = ans.dataset['number'];
-    ans.innerText = currentQuestion['ans' + number];
-});
+    answers.forEach(ans => {
+        const number = ans.dataset['number'];
+        ans.innerText = currentQuestion['ans' + number];
+    }); 
 
-availableQuestions.splice(questionsIndex, 1);
+    availableQuestions.splice(questionsIndex, 1);
 
-acceptingAnswers = true;
+    acceptingAnswers = true;
 
 }
 

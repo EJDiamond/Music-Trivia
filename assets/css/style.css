@@ -81,7 +81,41 @@ hr {
     transform: scale(1.1);
     transform: 100ms;
 }
+/* Homepage media queries*/
 
+@media (max-width: 474px) {
+    .heading {
+        line-height: 50px;
+        padding-bottom: 10px;
+    }
+}
+@media (max-width: 320px){
+    
+    .homepage-section {
+        max-width: 80%;
+    }
+
+    .heading {
+        font-size: 3rem;
+        line-height: 40px;
+        padding-bottom: 10px;
+    }
+
+    .homepage-container p {
+        padding-top: 15px;
+        line-height: 25px;
+        font-weight: 200;
+        margin-bottom: 20px;
+        font-size: 1.1rem;
+    }
+
+    .btn {
+        font-size: 1.3rem;
+    }
+
+
+
+}
 /* Rule book modal pop up */
 
 .rules-container {
