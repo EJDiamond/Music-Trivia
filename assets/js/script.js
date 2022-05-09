@@ -278,7 +278,7 @@ function startQuiz () {
 // Function to present new question and score
 
 function renderNewQuestion () {
-    if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
+    if(availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
         let hide_quiz_container = document.getElementById('quiz_container');
         hide_quiz_container.style.display="none";
         show_score_modal.style.display="flex";
@@ -294,7 +294,10 @@ progressCounter.innerText = questionCounter + "/" + MAX_QUESTIONS;
 
 const questionsIndex = Math.floor(Math.random() * availableQuestions.length);
 currentQuestion = availableQuestions[questionsIndex];
-question.innerText = currentQuestion.question;
+console.log(currentQuestion)
+if (currentQuestion != {}) {
+    question.innerText = currentQuestion.question;
+    };
 
 // Assigning answers to relevant question
 
