@@ -334,6 +334,8 @@ hr {
 .quiz-completed {
     justify-content: center;
     display: none;
+    width: 100vw;
+    height: 100vh;
 }
 
 .quiz-completed p {
@@ -430,4 +432,22 @@ input {
     font-size: 1.5rem;
     text-transform: uppercase;
     line-height: 30px;
+}
+
+@media (max-width: 474px) {
+    .leader-board .heading {
+        font-size: 3rem;
+    }
+    .leader-board ul {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .leader-board .heading {
+        font-size: 2rem;
+    }
+    .leader-board ul {
+        font-size: 1rem;
+    }
 }

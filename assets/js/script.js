@@ -30,7 +30,7 @@ let questionCounter = 0;
 let pointScore = 0;
 let availableQuestions = [];
 const SCORE_POINTS = 1;
-const MAX_QUESTIONS= 20;
+const MAX_QUESTIONS= 2;
 
 // Rule book button to open modal and button to exit using event listener
 
