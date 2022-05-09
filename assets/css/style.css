@@ -167,13 +167,13 @@ hr {
 
 .rules-container .modal p {
     text-transform: uppercase;
-    padding-top: 25px;
     line-height: 20px;
     font-weight: 200;
     font-size: 1.2rem;
 }
 
 /* Rule book media queries */
+
 @media (max-width: 474px) {
     .scroll {
         width: 100%;
@@ -183,6 +183,7 @@ hr {
     .rules-container .modal p{
     padding-top: 5px;
     line-height: 25px;
+    font-size: 1rem;
 }
 }
 
@@ -190,7 +191,9 @@ hr {
     .homepage-section {
         max-width: 90%;
     }
-
+    .modal h2 {
+        font-size: 1.8rem;
+    }
 }
 
 /*Exit rule book modal button */
@@ -273,6 +276,25 @@ hr {
     opacity: 1;
 }
 
+/*Media Query for Quiz page*/
+
+
+@media (max-width: 646px) {
+    .quizHeader {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 320px){
+    .quizHeader {
+        font-size: 1rem;
+    }
+    .question {
+        font-size: 1.2rem;
+    }
+}
+
+
 /*Multiple choice answer question buttons*/
 
 .answer-container {
@@ -287,6 +309,12 @@ hr {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+@media (max-width: 320px){
+.answer-container {
+    font-size: 1.1rem;
+}
 }
 
 .correct {
