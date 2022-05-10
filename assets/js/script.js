@@ -1,5 +1,4 @@
 // Element Variables
-
 const openRules = document.getElementById('rule-btn');
 const rules_container = document.getElementById('rules_container');
 const closeRules = document.getElementById('exit');
@@ -23,7 +22,6 @@ const closeEndOfQuiz = document.getElementById('exit2');
 let show_score_modal = document.getElementById('quiz_completed');
 
 // Game Variables
-
 let currentQuestion = {};
 let acceptingAnswers = true;
 let questionCounter = 0;
@@ -33,7 +31,6 @@ const SCORE_POINTS = 1;
 const MAX_QUESTIONS= 2;
 
 // Rule book button to open modal and button to exit using event listener
-
 openRules.addEventListener('click', () => {
     rules_container.classList.add('show');
     hideHomepage.style.display="none";
@@ -45,7 +42,6 @@ closeRules.addEventListener('click', () => {
 });
 
 // Play button to open quiz modal and button to exit using event listener
-
 openQuiz.addEventListener('click', () => {
     quiz_container.classList.add('show');
     hideHomepage.style.display="none";
@@ -57,7 +53,6 @@ closeQuiz.addEventListener('click', () => {
 });
 
 //Leader board button to open leaderboard using event listener
-
 openLeaderBoard.addEventListener('click', () => {
     leader_board.classList.add('show');
     hideHomepage.style.display="none";
@@ -69,14 +64,12 @@ closeLeaderBoard.addEventListener('click', () => {
 });
 
 // Event Listener for entering the username, in order for the save username button to be enabled
-
 username.addEventListener("keyup", () => {
      console.log(username.value);
      saveScore.disabled = !username.value; 
  });
 
 // Event Listener for play again button
-
 playAgain.addEventListener('click', () => {
     quizContainer.classList.add('show');
     show_score_modal.style.display="none";
@@ -85,14 +78,12 @@ playAgain.addEventListener('click', () => {
 });
 
 //Event Listener to close end of quiz score container
-
 closeEndOfQuiz.addEventListener('click', () => {
     show_score_modal.style.display="none";
     showHomepage.style.display="flex";
 });
 
 // Array of questions
-
 let questions = [
     {
         question: 'What British rock band pioneered the use of the light show?',
@@ -266,8 +257,7 @@ let questions = [
     }
 ]
 
-// Function to start quiz
-
+// Function to start quiz setting score and question count to zero
 function startQuiz () {
     availableQuestions = [...questions];
     questionCounter = 0;
@@ -275,8 +265,7 @@ function startQuiz () {
     renderNewQuestion();
 }
 
-// Function to present new question and score
-
+// Function to render new question resetting the question coutner when quiz is complete or exited
 function renderNewQuestion () {
     if(availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
         let hide_quiz_container = document.getElementById('quiz_container');
@@ -284,16 +273,13 @@ function renderNewQuestion () {
         show_score_modal.style.display="flex";
         hideHomepage.style.display="none";
         questionCounter = 0;
-        
-};
+    };
 
-// Progress counter updated by question counter
-
+    // Progress counter to increment as the question counter increases
     questionCounter++;
     progressCounter.innerText = questionCounter + "/" + MAX_QUESTIONS;
 
-// Variable to present random questions
-
+    // Variable to present random questions
     const questionsIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionsIndex];
     console.log(currentQuestion)
@@ -301,8 +287,7 @@ function renderNewQuestion () {
         question.innerText = currentQuestion.question;
         };
 
-// Assigning answers to relevant question
-
+    // Assigning answers to relevant question
     answers.forEach(ans => {
         const number = ans.dataset['number'];
         ans.innerText = currentQuestion['ans' + number];
@@ -312,10 +297,9 @@ function renderNewQuestion () {
 
     acceptingAnswers = true;
 
-}
+};
 
 // Function to check if the correct answer has been selected
-
 answers.forEach(ans => {
     ans.addEventListener ('click', e => {
         if(!acceptingAnswers) return;
@@ -324,16 +308,17 @@ answers.forEach(ans => {
         const selectedChoice = e.target;
         const selectedAnswer = selectedChoice.dataset['number'];
 
-        //check if answer is correct
+        //Check to see if answer is correct or incorrect
         let classtoApply = selectedAnswer == currentQuestion.correct ? 'correct' : 'incorrect';
 
+        // If the correct answer is selected the points are incremented by one
         if(classtoApply === 'correct') {
             incrementScore(SCORE_POINTS);
         }
-
+        // Changes the color of the the answer depending whether it is correct or incorrect
         selectedChoice.classList.add(classtoApply);
 
-        //reset and present next question
+        //Reset and present next question
         setTimeout(() => {
             selectedChoice.classList.remove(classtoApply);
             renderNewQuestion();        
@@ -341,6 +326,7 @@ answers.forEach(ans => {
     });
 });
 
+// Function to increase the userscore 
 function incrementScore(num) {
     pointScore +=num;
     scoreText.innerText = pointScore;
@@ -349,12 +335,10 @@ function incrementScore(num) {
 }
 
 // Quiz completed final score section
-
 const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
 const MAX_HIGH_SCORES = 6;
 
-// Function to save user score
-
+// Function to save user score to local storage
 function saveHighScore(e) {
     console.log("pressed save");
     e.preventDefault();
@@ -366,27 +350,22 @@ function saveHighScore(e) {
 
     highScores.push(score);
     
-// Function to sort highscore from high to low
-
+    // Function to sort highscore from high to low
     highScores.sort( (a,b) => b.score - a.score)
     highScores.splice(6);
 
     localStorage.setItem("highScores", JSON.stringify(highScores));
 
-// Return to homepage section when user has saved score  
-
+    // Return to homepage section when user has saved score  
     window.location.assign('index.html');
-
     console.log(highScores);
 };
 
 // Use map to convert the arrays items to strings and into new array
-
 highScoresList.innerHTML = highScores.map(score => {
     return `<li class="high-score">${score.name}  -  ${score.score}</li>`;
     })
     .join("")
-
 
 
 startQuiz ();
