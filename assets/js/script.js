@@ -78,7 +78,7 @@ username.addEventListener("keyup", () => {
 // Event Listener for play again button
 
 playAgain.addEventListener('click', () => {
-    quizContainer.style.display="flex";
+    quizContainer.classList.add('show');
     show_score_modal.style.display="none";
     scoreText.innerText = 0;
     startQuiz();
@@ -89,7 +89,7 @@ playAgain.addEventListener('click', () => {
 closeEndOfQuiz.addEventListener('click', () => {
     show_score_modal.style.display="none";
     showHomepage.style.display="flex";
-})
+});
 
 // Array of questions
 
@@ -280,9 +280,11 @@ function startQuiz () {
 function renderNewQuestion () {
     if(availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
         let hide_quiz_container = document.getElementById('quiz_container');
-        hide_quiz_container.style.display="none";
+        hide_quiz_container.classList.remove('show');
         show_score_modal.style.display="flex";
         hideHomepage.style.display="none";
+        questionCounter = 0;
+        
 };
 
 // Progress counter updated by question counter
