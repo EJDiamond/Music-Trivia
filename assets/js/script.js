@@ -1,8 +1,8 @@
 // Element Variables
 
-const open = document.getElementById('rule-btn');
+const openRules = document.getElementById('rule-btn');
 const rules_container = document.getElementById('rules_container');
-const close = document.getElementById('exit');
+const closeRules = document.getElementById('exit');
 const openQuiz = document.getElementById('play-btn');
 const closeQuiz = document.getElementById('exit1');
 const question = document.getElementById('question');
@@ -34,17 +34,17 @@ const MAX_QUESTIONS= 2;
 
 // Rule book button to open modal and button to exit using event listener
 
-open.addEventListener('click', () => {
+openRules.addEventListener('click', () => {
     rules_container.classList.add('show');
     hideHomepage.style.display="none";
 });
 
-close.addEventListener('click', () => {
+closeRules.addEventListener('click', () => {
     rules_container.classList.remove('show');
     showHomepage.style.display="flex";
 });
 
-// Play button to open level selector modal and button to exit using event listener
+// Play button to open quiz modal and button to exit using event listener
 
 openQuiz.addEventListener('click', () => {
     quiz_container.classList.add('show');
