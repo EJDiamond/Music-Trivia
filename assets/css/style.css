@@ -79,7 +79,6 @@ hr {
     cursor: pointer;
     border: black solid 3px;
     transform: scale(1.1);
-    transform: 100ms;
 }
 /* Homepage media queries*/
 
@@ -133,7 +132,7 @@ hr {
 }
 
 .rules-container.show {
-    pointer-events: auto;
+    pointer-events:all;
     opacity: 1;
 }
 
@@ -277,7 +276,7 @@ hr {
 }
 
 .quiz-container.show {
-    pointer-events: auto;
+    pointer-events: all;
     opacity: 1;
 }
 
@@ -355,7 +354,7 @@ hr {
 }
 
 .quiz-completed.show {
-    pointer-events: auto;
+    pointer-events: all;
     opacity: 1;
 }
 
@@ -409,7 +408,7 @@ input {
     text-transform: uppercase;
     background-color: white;
     color: black;
-    border-color: black solid 5px;
+    border: black solid 2px;
     border-radius: 40px;
     margin: 20px 5px;
     vertical-align: middle;
@@ -453,7 +452,7 @@ input {
 }
 
 .leader-board.show {
-    pointer-events: auto;
+    pointer-events: all;
     opacity: 1;
 }
 
