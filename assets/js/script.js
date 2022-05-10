@@ -19,7 +19,9 @@ const quizContainer = document.getElementById('quiz_container');
 const highScoresList = document.getElementById('highScoresList');
 const progressCounter = document.getElementById('progressCounter');
 const closeEndOfQuiz = document.getElementById('exit2');
+const leaderboard = document.getElementById('leaderboard');
 let show_score_modal = document.getElementById('quiz_completed');
+
 
 // Game Variables
 let currentQuestion = {};
@@ -43,23 +45,23 @@ closeRules.addEventListener('click', () => {
 
 // Play button to open quiz modal and button to exit using event listener
 openQuiz.addEventListener('click', () => {
-    quiz_container.classList.add('show');
+    quizContainer.classList.add('show');
     hideHomepage.style.display="none";
 });
 
 closeQuiz.addEventListener('click', () => {
-    quiz_container.classList.remove('show');
+    quizContainer.classList.remove('show');
     showHomepage.style.display="flex";
 });
 
 //Leader board button to open leaderboard using event listener
 openLeaderBoard.addEventListener('click', () => {
-    leader_board.classList.add('show');
+    leaderboard.classList.add('show');
     hideHomepage.style.display="none";
 });
 
 closeLeaderBoard.addEventListener('click', () => {
-    leader_board.classList.remove('show');
+    leaderboard.classList.remove('show');
     showHomepage.style.display="flex";
 });
 
@@ -69,7 +71,7 @@ username.addEventListener("keyup", () => {
      saveScore.disabled = !username.value; 
  });
 
-// Event Listener for play again button
+// Event Listener for play again button to reset and open quiz
 playAgain.addEventListener('click', () => {
     quizContainer.classList.add('show');
     show_score_modal.style.display="none";
@@ -255,7 +257,7 @@ let questions = [
         ans4: "Led Zeppelin III",
         correct: 1,
     }
-]
+];
 
 // Function to start quiz setting score and question count to zero
 function startQuiz () {
@@ -273,7 +275,7 @@ function renderNewQuestion () {
         show_score_modal.style.display="flex";
         hideHomepage.style.display="none";
         questionCounter = 0;
-    };
+    }
 
     // Progress counter to increment as the question counter increases
     questionCounter++;
@@ -282,22 +284,21 @@ function renderNewQuestion () {
     // Variable to present random questions
     const questionsIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionsIndex];
-    console.log(currentQuestion)
+    console.log(currentQuestion);
     if (currentQuestion != {}) {
         question.innerText = currentQuestion.question;
-        };
+        }
 
     // Assigning answers to relevant question
     answers.forEach(ans => {
-        const number = ans.dataset['number'];
+        const number = ans.dataset.number;
         ans.innerText = currentQuestion['ans' + number];
     }); 
 
     availableQuestions.splice(questionsIndex, 1);
 
     acceptingAnswers = true;
-
-};
+}
 
 // Function to check if the correct answer has been selected
 answers.forEach(ans => {
@@ -306,7 +307,7 @@ answers.forEach(ans => {
 
         acceptingAnswers = false;
         const selectedChoice = e.target;
-        const selectedAnswer = selectedChoice.dataset['number'];
+        const selectedAnswer = selectedChoice.dataset.number;
 
         //Check to see if answer is correct or incorrect
         let classtoApply = selectedAnswer == currentQuestion.correct ? 'correct' : 'incorrect';
@@ -336,7 +337,6 @@ function incrementScore(num) {
 
 // Quiz completed final score section
 const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
-const MAX_HIGH_SCORES = 6;
 
 // Function to save user score to local storage
 function saveHighScore(e) {
@@ -351,7 +351,7 @@ function saveHighScore(e) {
     highScores.push(score);
     
     // Function to sort highscore from high to low
-    highScores.sort( (a,b) => b.score - a.score)
+    highScores.sort( (a,b) => b.score - a.score);
     highScores.splice(6);
 
     localStorage.setItem("highScores", JSON.stringify(highScores));
@@ -359,13 +359,13 @@ function saveHighScore(e) {
     // Return to homepage section when user has saved score  
     window.location.assign('index.html');
     console.log(highScores);
-};
+}
 
 // Use map to convert the arrays items to strings and into new array
 highScoresList.innerHTML = highScores.map(score => {
     return `<li class="high-score">${score.name}  -  ${score.score}</li>`;
     })
-    .join("")
+    .join("");
 
 
 startQuiz ();
