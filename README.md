@@ -1,5 +1,7 @@
 # Music Triva
 
+A trivia quiz, testing the users knowledge of all things musical.
+
 [View the live project here](https://ejdiamond.github.io/Music-Trivia/)
 
 ![Responsive Design Image](assets/images/responsive-design.png)
@@ -40,7 +42,7 @@ The Permanent Marker and Overpass fonts are the main fonts used throughout the w
 
 ### Wireframe
 
-The [wireframes](https://github.com/EJDiamond/Music-Trivia/blob/main/assets/images/wireframe-music-trivia.png) show the intial page where the user can select to play, read rules or view the leaderboard. Once 'play' is selected the player then has the option to select a level, intially only the first level is unlocked and once passed, level two will be available, with level three being accessed once the second level is passed.
+The [wireframes](https://github.com/EJDiamond/Music-Trivia/blob/9cd1e20489405d1ebf1d981022d163feb6c2b1db/assets/images/wireframe-project-2.png) show the intial page where the user can select to play, read rules or view the leaderboard. Once 'play' is selected the player then has the option to select a level, intially only the first level is unlocked and once passed, level two will be available, with level three being accessed once the second level is passed.
 
 The quiz is opened once the level is selected, taking the user to the first question. When an answer is hovered over the slection turns white, if the answer selected is correct it will turn green, if incorrect, it will turn red.
 
@@ -66,13 +68,13 @@ The rules are presented in a concise list making them clear and easy to understa
 
 -__Quiz section__
 
-The quiz section clearly displays the question counter in the top right of the page and the yser score in the top right, the counter incrementing as the quiz progresses and the score increasing by one for each correct answer. If the correct answer is selected the answer box out turns green and if incorrect it will turn red. The exit quiz bottom is in the bottom right and will return the user to homepage without saving progress.
+The quiz section clearly displays the question counter out of twenty in the top right of the page and the user score in the top right, the counter incrementing as the quiz progresses and the score increasing by one for each correct answer. If the correct answer is selected the answer box border turns green and if incorrect it will turn red. The exit quiz buttom is in the bottom right and will return the user to homepage without saving progress.
 
 ![Quiz](/assets/images/correct-incorrect.png)
 
 -__End of quiz__
 
-As the user comes to the end of the quiz, they are presented with a form in which they can enter their name to save their score. They can also choose to play again, taking them back to question one or exit without saving and return to the homepage. 
+As the user comes to the end of the quiz, they are presented with a form in which they can enter their name to save their score. They can also choose to play again, taking them back to question one, or exit without saving and return to the homepage. 
 
 ![End of quiz](/assets/images/end-of-quiz.png)
 
@@ -81,6 +83,12 @@ As the user comes to the end of the quiz, they are presented with a form in whic
 The leaderboard is reached by clicking the leaderboard button on the homepage, the top 6 highscores are logged here if the user has chosen to save score. Pressing clear will clear the local storage in turn clearing the leaderboard and returning the user to the homepage.
 
 ![Leaderboard](/assets/images/leaderboard.png)
+
+### Future Features
+
+Possible changes to the game:
+- Additional questions
+- A shuffle through questions so the game is able to be played over and over without the user remembering the answers.
 
 # Frameworks, Libraries and Programmes Used
 
@@ -177,8 +185,8 @@ The site was deployed through Github pages using the following steps:
 
 ## Content
 
-- A javascript quiz making tutorial was used and altered to help build the site [YouTube Tutorial](https://www.youtube.com/watch?v=f4fB9Xg2JEY&t=2788s)
-- Instructions for how to store in the local storage was used from [YouTube Tutorial](https://www.youtube.com/watch?v=jfOv18lCMmw)
+- A javascript quiz making tutorial was used, altered and expanded upon to help build the site [YouTube Tutorial](https://www.youtube.com/watch?v=f4fB9Xg2JEY&t=2788s)
+- Instructions for how to store in the local storage were used from [YouTube Tutorial](https://www.youtube.com/watch?v=jfOv18lCMmw)
 - An open trivia database was used to gather questions for the quiz [Quiz Database](https://opentdb.com/api_config.php)
 
 ## Media
