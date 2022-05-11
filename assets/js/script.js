@@ -346,7 +346,7 @@ function incrementScore(num) {
 const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
 
 // Function to save user score to local storage
-document.getElementById("saveScore").onclick = function() {saveHighScore()};
+document.getElementById("saveScore").onclick = function() {saveHighScore();};
 function saveHighScore() {
     const score = {
         score: finalScore.innerText,
