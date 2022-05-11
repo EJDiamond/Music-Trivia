@@ -132,7 +132,7 @@ hr {
 }
 
 .rules-container.show {
-    pointer-events:all;
+    pointer-events:auto;
     opacity: 1;
 }
 
@@ -276,7 +276,7 @@ hr {
 }
 
 .quiz-container.show {
-    pointer-events: all;
+    pointer-events: auto;
     opacity: 1;
 }
 
@@ -354,7 +354,7 @@ hr {
 }
 
 .quiz-completed.show {
-    pointer-events: all;
+    pointer-events: auto;
     opacity: 1;
 }
 
@@ -452,7 +452,7 @@ input {
 }
 
 .leader-board.show {
-    pointer-events: all;
+    pointer-events: auto;
     opacity: 1;
 }
 

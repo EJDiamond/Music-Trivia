@@ -31,7 +31,7 @@ let questionCounter = 0;
 let pointScore = 0;
 let availableQuestions = [];
 const SCORE_POINTS = 1;
-const MAX_QUESTIONS= 2;
+const MAX_QUESTIONS= 20;
 
 // Rule book button to open modal and button to exit using event listener
 openRules.addEventListener('click', () => {
@@ -90,9 +90,7 @@ closeEndOfQuiz.addEventListener('click', () => {
 clearLeaderboard.addEventListener('click', () => {
     localStorage.clear('highscores');
     window.location.reload();
-    leaderboard.classList.add('show');
-    showHomepage.style.display="none";
-})
+});
 
 // Array of questions
 let questions = [
@@ -348,10 +346,8 @@ function incrementScore(num) {
 const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
 
 // Function to save user score to local storage
-function saveHighScore(e) {
-    console.log("pressed save");
-    e.preventDefault();
-    
+document.getElementById("saveScore").onclick = function() {saveHighScore()};
+function saveHighScore() {
     const score = {
         score: finalScore.innerText,
         name: username.value
@@ -367,8 +363,8 @@ function saveHighScore(e) {
 
     // Return to homepage section when user has saved score  
     window.location.assign('index.html');
-    console.log(highScores);
 }
+
 
 // Use map to convert the arrays items to strings and into new array
 highScoresList.innerHTML = highScores.map(score => {
