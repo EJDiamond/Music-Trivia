@@ -60,6 +60,8 @@ hr {
     font-size: 1.2rem;
 }
 
+/*Homepage buttons*/
+
 .btn {
     background-color: black;
     color: white;
@@ -80,6 +82,7 @@ hr {
     border: black solid 3px;
     transform: scale(1.1);
 }
+
 /* Homepage media queries*/
 
 @media (max-width: 474px) {
@@ -89,17 +92,14 @@ hr {
     }
 }
 @media (max-width: 320px){
-    
     .homepage-section {
         max-width: 80%;
     }
-
     .heading {
         font-size: 3rem;
         line-height: 40px;
         padding-bottom: 10px;
     }
-
     .homepage-container p {
         padding-top: 15px;
         line-height: 25px;
@@ -107,14 +107,11 @@ hr {
         margin-bottom: 20px;
         font-size: 1.1rem;
     }
-
     .btn {
         font-size: 1.3rem;
     }
-
-
-
 }
+
 /* Rule book modal pop up */
 
 .rules-container {
@@ -283,7 +280,6 @@ hr {
 
 /*Media Query for Quiz page*/
 
-
 @media (max-width: 646px) {
     .quizHeader {
         font-size: 1.2rem;
@@ -298,12 +294,12 @@ hr {
         font-size: 1.1rem;
     }
 }
+
 @media (max-width: 320px){
     .quizHeader {
         font-size: 1rem;
     }
 }
-
 
 /*Multiple choice answer question buttons*/
 
@@ -322,9 +318,9 @@ hr {
 }
 
 @media (max-width: 320px){
-.answer-container {
-    font-size: 1.1rem;
-}
+    .answer-container {
+        font-size: 1.1rem;
+    }
 }
 
 .correct {

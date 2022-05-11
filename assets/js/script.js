@@ -33,6 +33,8 @@ let availableQuestions = [];
 const SCORE_POINTS = 1;
 const MAX_QUESTIONS= 20;
 
+//Event Listeners
+
 // Rule book button to open modal and button to exit using event listener
 openRules.addEventListener('click', () => {
     rules_container.classList.add('show');
@@ -276,7 +278,7 @@ function startQuiz () {
     renderNewQuestion();
 }
 
-// Function to render new question resetting the question coutner when quiz is complete or exited
+// Function to render new question resetting the question counter when quiz is complete or exited
 function renderNewQuestion () {
     if(availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
         let hide_quiz_container = document.getElementById('quiz_container');
@@ -336,7 +338,7 @@ answers.forEach(ans => {
     });
 });
 
-// Function to increase the userscore 
+// Function to increase the userscore as question
 function incrementScore(num) {
     pointScore +=num;
     scoreText.innerText = pointScore;
@@ -347,7 +349,7 @@ function incrementScore(num) {
 // Quiz completed final score section
 const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
 
-// Function to save user score to local storage
+// Function to save user score to local storage when save button is clicked
 document.getElementById("saveScore").onclick = function() {saveHighScore();};
 function saveHighScore() {
     const score = {
