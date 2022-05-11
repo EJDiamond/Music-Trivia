@@ -52,7 +52,35 @@ The wireframe was created in Adobe Illustrator, using one artboard to display th
 
 ### Existing Features
 
+-__Homepage Section__
 
+The hompage is clear, simplistic and easy to nagivate through. The buttons change to white as they are hovered over making it clear to see what is being selected. 
+
+![Homepage](/assets/images/homepage.png)
+
+-__Rule book__
+
+The rules are presented in a concise list making them clear and easy to understand. When viewd on smaller screens the user is able to scroll through them. 
+
+![Rulebook](/assets/images/rules.png)
+
+-__Quiz section__
+
+The quiz section clearly displays the question counter in the top right of the page and the yser score in the top right, the counter incrementing as the quiz progresses and the score increasing by one for each correct answer. If the correct answer is selected the answer box out turns green and if incorrect it will turn red. The exit quiz bottom is in the bottom right and will return the user to homepage without saving progress.
+
+![Quiz](/assets/images/correct-incorrect.png)
+
+-__End of quiz__
+
+As the user comes to the end of the quiz, they are presented with a form in which they can enter their name to save their score. They can also choose to play again, taking them back to question one or exit without saving and return to the homepage. 
+
+![End of quiz](/assets/images/end-of-quiz.png)
+
+-__Leaderboard__
+
+The leaderboard is reached by clicking the leaderboard button on the homepage, the top 6 highscores are logged here if the user has chosen to save score. Pressing clear will clear the local storage in turn clearing the leaderboard and returning the user to the homepage.
+
+![Leaderboard](/assets/images/leaderboard.png)
 
 # Frameworks, Libraries and Programmes Used
 
@@ -151,11 +179,11 @@ The site was deployed through Github pages using the following steps:
 
 - A javascript quiz making tutorial was used and altered to help build the site [YouTube Tutorial](https://www.youtube.com/watch?v=f4fB9Xg2JEY&t=2788s)
 - Instructions for how to store in the local storage was used from [YouTube Tutorial](https://www.youtube.com/watch?v=jfOv18lCMmw)
-- An open trivia dtabase was used to gather questions for the quiz [Quiz Database](https://opentdb.com/api_config.php)
+- An open trivia database was used to gather questions for the quiz [Quiz Database](https://opentdb.com/api_config.php)
 
 ## Media
 
-- Image used across the background of site were taken from [Pexels](https://www.pexels.com/)
+- Image used across the background of site was taken from [Pexels](https://www.pexels.com/)
 
 
 
