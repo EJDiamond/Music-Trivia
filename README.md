@@ -12,16 +12,15 @@
 - As a First Time Visitor, I want to be aesthetically pleased and quickly understand the purpose of the site.
 - As a First Time Visitor, I want to be able to easily find the rules of the quiz and understand how to play.
 - As a First Time Visitor, I want to be get on with answering the quiz questions.
+- As a First Time Visitor, I want to see the question number and my score as I progress through the quiz.
 
 **Returning Visitor Goals**
 
-- As a Returning Visitor, I want to be able to select new levels of the game when the previous is passed.
 - As a Returning Visitor, I want to have highscores logged to see progression.
 
 **Frequent User Goals**
 
 - As a Frequent User, I want to check my highscores.
-- As a Frequent User, I want to unlock all levels of the game and be able to play any.
 - As a Frequent User, I want to be able to clear highscores so more can be entered.
 
 ## Design
@@ -83,7 +82,7 @@ The wireframe was created in Adobe Illustrator, using one artboard to display th
    - The form and buttons on the end of quiz container are displayed in a column to suit smaller devices.
 
 
-   ![Responsiveness](assets/images/responsive_one.png)
+   ![Responsiveness](assets/images/responsive-scroll.png)
 
 ## Validator Testing
 
@@ -106,17 +105,22 @@ The wireframe was created in Adobe Illustrator, using one artboard to display th
 
 - __First Time Visitor Goals__
 
-   - a) As a First Time Visitor, I want to easily understand the main purpose of the site.
-      - The logo and hero image/text are eyecatching andeffective in displaying what the site is for.
-      - The user has the option to scroll down or navigate to other pages.
+   - a) As a First Time Visitor, I want to be aesthetically pleased and quickly understand the purpose of the site.
+      - The homepage of the site is simplistic and easy to navigate meaning you can start playing the game quickly.
+      - The user can quickly selected different buttons and navigate to the different elements of the page.
 
-   - b) As a First Time Visitor, I want to be able to easily navigate throughout the site to find content.
-      - The navigation bar in the header is clear and uses :hover to show the user which page they are currently on.
-      - The three pages are kept consistent by using the same nav links and layout for them.
+   - b) As a First Time Visitor, I want to be able to easily find the rules of the quiz and understand how to play.
+      - The rule book button on the homepage, take you to the rules which are listed for easy reading.
+      - For smaller devices the rules can be scrolled through.
 
-   - c) As a First Time Visitor, I want to locate their social media links to see their followings and connect with local people.
-      - The social media links are displayed clearly in the footer with easily recognised icons.
-      - The social links open blank pages so as not to direct the user away from the site.
+   - c) As a First Time Visitor, I want to be get on with answering the quiz questions.
+      - The play button is located in the centre of the screen so as the user can instantly begin the game.
+
+   - d) As a First Time Visitor, I want to see the question number and my score as I progress through the quiz.
+      - The progression counter is shown in the top left, and allows the user to know at what point in the quiz they are at.
+      - The score, displayed on the right increases as the user selcets correct answers.
+    
+
 
 - __Returning Visitor Goals__
 
