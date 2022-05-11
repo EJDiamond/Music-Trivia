@@ -21,6 +21,7 @@ const progressCounter = document.getElementById('progressCounter');
 const closeEndOfQuiz = document.getElementById('exit2');
 const leaderboard = document.getElementById('leaderboard');
 let show_score_modal = document.getElementById('quiz_completed');
+const clearLeaderboard = document.getElementById('clear');
 
 
 // Game Variables
@@ -84,6 +85,14 @@ closeEndOfQuiz.addEventListener('click', () => {
     show_score_modal.style.display="none";
     showHomepage.style.display="flex";
 });
+
+// Event listener to clear leaderboard
+clearLeaderboard.addEventListener('click', () => {
+    localStorage.clear('highscores');
+    window.location.reload();
+    leaderboard.classList.add('show');
+    showHomepage.style.display="none";
+})
 
 // Array of questions
 let questions = [
@@ -366,7 +375,6 @@ highScoresList.innerHTML = highScores.map(score => {
     return `<li class="high-score">${score.name}  -  ${score.score}</li>`;
     })
     .join("");
-
 
 startQuiz ();
 
