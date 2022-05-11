@@ -48,6 +48,12 @@ The option to exit the quiz is presented as a button at each stage.
 
 The wireframe was created in Adobe Illustrator, using one artboard to display the seperate modals throughout the quiz. The same fonts were downloaded to the Adobe library and the background image from pexels to get a real feel as to what the quiz would look like.
 
+# Features
+
+### Existing Features
+
+
+
 # Frameworks, Libraries and Programmes Used
 
 - [Google Fonts](https://fonts.google.com/)
@@ -81,7 +87,6 @@ The wireframe was created in Adobe Illustrator, using one artboard to display th
    - The flex containers mean the height and width of the modal box are decreased automatically on smaller devices.
    - The form and buttons on the end of quiz container are displayed in a column to suit smaller devices.
 
-
    ![Responsiveness](assets/images/responsive-scroll.png)
 
 ## Validator Testing
@@ -97,7 +102,6 @@ The wireframe was created in Adobe Illustrator, using one artboard to display th
 
 - Chromes Lighthouse
    - ![Chromes Lighthouse report](assets/images/lighthouse-report.png)
-
 
 ## Testing User Stories From User Experience Section
 
@@ -132,7 +136,6 @@ The wireframe was created in Adobe Illustrator, using one artboard to display th
    - b) As a Frequent User, I want to be able to clear highscores so more can be entered.
       - The user is able to press the clear button on the leaderboard so as that the board is cleared and the user can start the high scores again.
 
-
 # Deployment
 
 The site was deployed through Github pages using the following steps:
@@ -140,8 +143,7 @@ The site was deployed through Github pages using the following steps:
    - Click the settings button
    - Scroll down and hit the git hub page setting button
    - From the source dropdown, select main branch
-   - The site delpoys automatically and can be found via the following link:
-      - [Music Trivia](https://ejdiamond.github.io/Music-Trivia/)
+   - The site delpoys automatically and can be found via the following link: [Music Trivia](https://ejdiamond.github.io/Music-Trivia/)
 
 # Credits
 

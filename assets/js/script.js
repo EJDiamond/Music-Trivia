@@ -48,6 +48,8 @@ closeRules.addEventListener('click', () => {
 openQuiz.addEventListener('click', () => {
     quizContainer.classList.add('show');
     hideHomepage.style.display="none";
+    scoreText.innerText = 0;
+    startQuiz()
 });
 
 closeQuiz.addEventListener('click', () => {
