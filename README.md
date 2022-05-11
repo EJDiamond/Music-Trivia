@@ -47,40 +47,41 @@ The quiz is opened once the level is selected, taking the user to the first ques
 
 The option to exit the quiz is presented as a button at each stage.
 
+The wireframe was created in Adobe Illustrator, using one artboard to display the seperate modals throughout the quiz. The same fonts were downloaded to the Adobe library and the background image from pexels to get a real feel as to what the quiz would look like.
+
 # Frameworks, Libraries and Programmes Used
 
 - [Google Fonts](https://fonts.google.com/)
-   - Used to import Abril Fatface and Poppins fonts into the css style sheet and used throughout the site.
-
-- [Font Awesome](https://fontawesome.com/)
-   - Used to import icons used in:
-         - the footer of the page for social icons, sign up and to top button.
-         - the locations section for marking different types of walks.
+   - Used to import Permanent Marker and Overpass fonts into the css style sheet and used throughout the site.
 
 - [Github](https://github.com/)
    - Used to save project code from Git.
 
 - [Adobe Illustrator](https://www.adobe.com/)
    - Used to create 
-      - logo used in the header image.
+      - favicon
       - wireframes
 
 # Testing
 
-## Navigation Bar and Footer
+## Homepage
 
-   - The navigation bar and footer contain effective links which move aorund the sight successfully.
-   - The newsletter in footer only ssubmit when filled in with an email and when submited the code institute form dump page opens.
+   - The three buttons on the homepage all link to the relevant containers, so the correct section of the page pops up when button click is performed.
 
 ## Buttons
 
-   - All anchors across the site link to the relevant sections they were intended to navigate to.
+   - All exit buttons return to the homepage.
+   - The save button saves the users name and highscores to the local storage which then display in the leaderboard.
+   - The clear button on the leaderboard effectively clears the local storage.
 
 ## Responsiveness
 
    - When the user is viewing on different size screens the content changes dependent on the screen.
-   - Below screen width 780px elements of the design including the header, footer and other body content, take the direction of column using a flex both, meaning when the screen size is reduced to this size the user simply has to scroll down.
-   - The background hero image is changed from a cover to contain background so as the user can still experience the full image on smaller screens.
+   - Screen sizes 646px width and below the font sizes are decreased for a better user experience.
+   - Screen sizes 474 px width and below, the rule book uses a scroll bar so the user can scroll the rules without the font size being too small.
+   - The flex containers mean the height and width of the modal box are decreased automatically on smaller devices.
+   - The form and buttons on the end of quiz container are displayed in a column to suit smaller devices.
+
 
    ![Responsiveness](assets/images/responsive_one.png)
 
@@ -93,12 +94,13 @@ The option to exit the quiz is presented as a button at each stage.
    - No errors were shown when passed through the [CSS Validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fejdiamond.github.io%2FMusic-Trivia%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 
 - Javascript
-   - No errors were shown when passed through [JSHint](
+   - No errors were shown when passed through [JSHint](https://github.com/EJDiamond/Music-Trivia/blob/main/assets/images/jshint-results.png)
+
+- Chromes Lighthouse
+   - ![Chromes Lighthouse report](assets/images/lighthouse-report.png)
 
 
-## Unfixed Bugs
 
-- On some mobile devices the hero outer section pushes down the all about section leaving space between the two.
 
 ## Testing User Stories From User Experience Section
 

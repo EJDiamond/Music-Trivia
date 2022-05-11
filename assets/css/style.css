@@ -464,7 +464,7 @@ input {
 
 @media (max-width: 474px) {
     .leader-board .heading {
-        font-size: 3rem;
+        font-size: 2rem;
     }
     .leader-board ul {
         font-size: 1.3rem;
