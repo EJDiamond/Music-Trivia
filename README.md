@@ -99,8 +99,6 @@ The wireframe was created in Adobe Illustrator, using one artboard to display th
    - ![Chromes Lighthouse report](assets/images/lighthouse-report.png)
 
 
-
-
 ## Testing User Stories From User Experience Section
 
 - __First Time Visitor Goals__
@@ -120,26 +118,20 @@ The wireframe was created in Adobe Illustrator, using one artboard to display th
       - The progression counter is shown in the top left, and allows the user to know at what point in the quiz they are at.
       - The score, displayed on the right increases as the user selcets correct answers.
     
-
-
 - __Returning Visitor Goals__
 
-   - a) As a Returning Visitor, I want to find information about weekly meet ups.
-      - Information on weekly meet ups is displayed clearly on the sites home page, the user simply scrolls down from the heading.
-      - Alternatively, the user can use the events link in the navigation bar to save time scrolling.
-
-   - b) As a Returning Visitor, I want to find the best way to get in contact and sign up for weekly events.
-      - Sign up for newsletter forms are located in the footer on each page with icon buttons clearly showing what is achived by filling it in.
-      - The sign up page is clear and concise with inputs for first and last name as well as email and phone number. 
+   - a) As a Returning Visitor, I want to have highscores logged to see progression.
+      - The user has the option to save the score once the quiz is completed.
+      - If the user has socred higher than the top 6 previous scores, their score will be visible in the leaderboard.
 
 - __Frequent User Goals__
 
-   - a) As a Frequent User, I want to check to see if the existing weekly events have had any changes made.
-      -  The events section is clearly laid out with all the main information including locations, times and dates.
-      - The location page gives more detailed information on all events.
+   - a) As a Frequent User, I want to check my highscores.
+      -  The user is able to click the leaderboard button on the hompage and see the highscores that have been logged.
 
-   - b) As a Frequent User, I want to sign up to the Newsletter so that I am emailed with any newly scheduled events.
-      - Sign up for newsletter forms are located in the footer on each page with icon buttons clearly showing what is achived by filling it in.
+   - b) As a Frequent User, I want to be able to clear highscores so more can be entered.
+      - The user is able to press the clear button on the leaderboard so as that the board is cleared and the user can start the high scores again.
+
 
 # Deployment
 
@@ -155,9 +147,9 @@ The site was deployed through Github pages using the following steps:
 
 ## Content
 
-- Instructions for how to use flex boxes were used from a [YouTube Tutorial](https://www.youtube.com/watch?v=e2RQM4pE8uI)
-- Instructions for how to create a pure CSS modal pop up were used from a [YouTube Tutorial](https://www.youtube.com/watch?v=QButPwQ51wQ&list=PL_pBKMVHaanEK6aQOJkn2qWoOS9d_p2iy&index=1)
-- Instructions for how to create a 404 error page were taken from a [Github tutorial](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-custom-404-page-for-your-github-pages-site)
+- A javascript quiz making tutorial was used and altered to help build the site [YouTube Tutorial](https://www.youtube.com/watch?v=f4fB9Xg2JEY&t=2788s)
+- Instructions for how to store in the local storage was used from [YouTube Tutorial](https://www.youtube.com/watch?v=jfOv18lCMmw)
+- An open trivia dtabase was used to gather questions for the quiz [Quiz Database](https://opentdb.com/api_config.php)
 
 ## Media
 
