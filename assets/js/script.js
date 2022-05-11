@@ -355,7 +355,7 @@ function saveHighScore() {
 
     highScores.push(score);
     
-    // Function to sort highscore from high to low
+    // Function to sort highscore from high to low and spice to show only top 6 highescores
     highScores.sort( (a,b) => b.score - a.score);
     highScores.splice(6);
 
@@ -372,6 +372,10 @@ highScoresList.innerHTML = highScores.map(score => {
     })
     .join("");
 
-startQuiz ();
+// Event listener to start quiz once DOM is loaded
+document.addEventListener("DOMContentLoaded", function() {
+    startQuiz ();  
+});
+
 
     
